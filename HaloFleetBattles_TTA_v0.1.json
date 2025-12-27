@@ -1,0 +1,3304 @@
+{
+	"config": {
+		"trackHighestDivision": true
+	},
+	"appVersion": 2,
+	"disallowMultipleFactions": true,
+	"colors": {
+		"light": {
+			"primary": "#841912",
+			"background": "#a58650",
+			"pageBackground": "#fffffe",
+			"buttonBackground": "#e2ded3",
+			"primaryBorder": "#841912",
+			"primaryBackgroundColor": "#fffffe"
+		},
+		"dark": {
+			"primary": "#fffffe",
+			"background": "#814143",
+			"pageBackground": "#3b1d1e",
+			"buttonBackground": "#a58650",
+			"primaryBorder": "#841912",
+			"primaryBackgroundColor": "#841912"
+		}
+	},
+	"credit": [],
+	"game": "Halo Fleet Battles",
+	"stats": [
+		{
+			"name": "Movement",
+			"abbreviation": "Mv"
+		},
+        {
+			"name": "DamageTrack1st",
+			"abbreviation": "DT1st"
+		},
+        {
+			"name": "DamageTrack2nd",
+			"abbreviation": "DT2nd"
+		},
+        {        
+			"name": "DamageTrack3rd",
+			"abbreviation": "DT3rd"
+		},
+        {
+			"name": "BuildRating",
+			"abbreviation": "BR"
+		},
+        {
+			"name": "HangarCapacity",
+			"abbreviation": "H"
+		},
+        {
+			"name": "BoardingCraft",
+			"abbreviation": "BC"
+		},
+        {
+			"name": "SecurityDetail",
+			"abbreviation": "SD"
+		},
+        {
+			"name": "PrimaryWeapon1",
+			"abbreviation": "PW1"
+		},
+        {
+			"name": "PrimaryWeapon2",
+			"abbreviation": "PW2"
+		},
+        {
+			"name": "SecondaryWeapon1",
+			"abbreviation": "SW1"
+		},
+        {
+			"name": "SecondaryWeapon2",
+			"abbreviation": "SW2"
+		}
+	],
+	"dataTableKeys": [
+		"ships",
+        "fighters",
+        "boardingCrafts"
+	],
+	"limits": [],
+	"counts": [],
+	"calculations": [],
+	"validations": [],
+	"leaderConfig": {
+		"elementPropertyName": "groups",
+		"usesProperty": "heroicTier"
+	},
+	"elements": [
+		{
+			"propertyName": "factions",
+			"label": "Faction",
+			"type": "faction",
+			"dataSource": "factions",
+			"children": [
+				{
+					"propertyName": "commanders",
+					"dataSource": "commanders",
+					"label": "Commander",
+					"type": "main",
+					"children": [
+						{
+							"propertyName": "keywords",
+							"label": "Keywords",
+							"dataSource": "keywords",
+							"type": "static"
+						}
+					]
+				},
+				{
+					"propertyName": "groups",
+					"dataSource": "groups",
+					"label": "Group",
+					"type": "main",
+					"tierProperty": "heroicTier",
+					"tierData": "heroicTiers",
+					"childStatSumProperty": "buildRating",
+					"childStatSumLabel": "BR",
+					"tiers": [
+						{
+							"name": "Standard",
+                            "maximumChildren": {
+								"smallShips": 5,
+                                "capitalShips": 2
+							},
+							"rank": 1
+						},
+                        {
+							"name": "Emplacements",
+                            "maximumChildren": {
+								"emplacementPlatforms": 2
+							},
+							"rank": 2
+						},
+                        {
+							"name": "Massive",
+                            "maximumChildren": {
+								"ships": 0
+							},
+							"rank": 3
+						},
+						{
+							"name": "Specialist",
+							"maximumChildren": {
+								"ships": 0
+							},
+							"rank": 4
+						}
+					],
+					"children": [
+						{
+							"singleKey": "smallShip",
+							"dataSource": "smallShips",
+							"propertyName": "smallShips",
+							"label": "Small Ship",
+							"type": "list",
+							"children": [
+                                {
+									"propertyName": "boardingCraft",
+									"label": "Boarding Craft",
+									"type": "checkbox",
+									"dataSource": "keywords"
+								},
+                                {
+									"propertyName": "hangar",
+									"label": "Hangar",
+									"type": "checkbox",
+									"dataSource": "keywords"
+								}
+                            ]
+						},
+						{
+							"singleKey": "capitalShip",
+							"dataSource": "capitalShips",
+							"propertyName": "capitalShips",
+							"label": "Capital Ship",
+							"type": "list",
+							"children": [
+								{
+									"propertyName": "boardingCraft",
+									"label": "Boarding Craft",
+									"type": "checkbox",
+									"dataSource": "keywords"
+								},
+                                {
+									"propertyName": "hangar",
+									"label": "Hangar",
+									"type": "checkbox",
+									"dataSource": "keywords"
+								}
+							]
+						},
+                        {
+							"singleKey": "massiveShip",
+							"dataSource": "massiveShips",
+							"propertyName": "massiveShips",
+							"label": "Massive Ship",
+							"type": "list",
+							"children": [
+                                {
+									"propertyName": "boardingCraft",
+									"label": "Boarding Craft",
+									"type": "checkbox",
+									"dataSource": "keywords"
+								},
+                                {
+									"propertyName": "hangar",
+									"label": "Hangar",
+									"type": "checkbox",
+									"dataSource": "keywords"
+								}
+							]
+						},
+                        {
+							"singleKey": "emplacementPlatform",
+							"dataSource": "emplacementPlatforms",
+							"propertyName": "emplacementPlatforms",
+							"label": "Emplacement Platform",
+							"type": "list",
+							"children": [
+                                {
+									"propertyName": "boardingCraft",
+									"label": "Boarding Craft",
+									"type": "checkbox",
+									"dataSource": "keywords"
+								},
+                                {
+									"propertyName": "hangar",
+									"label": "Hangar",
+									"type": "checkbox",
+									"dataSource": "keywords"
+								}
+							]
+						},
+						{
+							"propertyName": "specialRules",
+							"label": "Special Rules",
+							"type": "static",
+							"dataSource": "keywords"
+						}
+					]
+				}
+			]
+		}
+	],
+	"data": {
+		"factions": [
+			{
+				"name": "UNSC"
+			},
+			{
+				"name": "Covenant"
+			}
+		],
+		"heroicTiers": [
+			{
+				"name": "Standard"
+			},
+            {   
+                "name": "Emplacements"
+            },
+            {   
+                "name": "Massive"
+            },
+			{
+				"name": "Specialist"
+			}
+		],
+		"groups": [
+			{
+				"name": "Standard Battle Group",
+				"points": 0,
+				"factions": [
+					{
+						"name": "UNSC",
+						"heroicTier": "Standard"
+					},
+					{
+						"name": "Covenant",
+						"heroicTier": "Standard"
+					}
+				],
+				"decreaseModelCount": 1
+			},
+            {
+				"name": "Emplacement",
+				"points": 160,
+				"factions": [
+					{
+						"name": "UNSC",
+						"heroicTier": "Emplacements"
+					}
+				],
+                "includes": [
+					{
+						"dataSource": "emplacementPlatforms",
+						"name": "MAC Platform"
+					}
+                ],
+				"requiredChildren": [
+					{
+						"name": "MAC Platform",
+						"points": 160,
+						"quantity": 1,
+						"elementPropertyName": "emplacementPlatforms"
+					}
+				],
+				"decreaseModelCount": 1,
+				"specialRules": [
+					"Fighter Cover",
+					"Vital Defensive Asset"
+				]
+			},
+            {
+				"name": "Covenant Assault Carrier (CAS)",
+				"points": 750,
+				"factions": [
+					{
+						"name": "Covenant",
+						"heroicTier": "Massive"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "massiveShips",
+						"name": "CAS-class Covenant Assault Carrier (Fore)"
+					},
+					{
+						"dataSource": "massiveShips",
+						"name": "CAS-class Covenant Assault Carrier (Mid)"
+					},
+					{
+						"dataSource": "massiveShips",
+						"name": "CAS-class Covenant Assault Carrier (Aft)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "CAS-class Covenant Assault Carrier (Fore)",
+						"quantity": 1,
+						"elementPropertyName": "massiveShips"
+					},
+					{
+						"name": "CAS-class Covenant Assault Carrier (Mid)",
+						"quantity": 1,
+						"elementPropertyName": "massiveShips"
+					},
+					{
+						"name": "CAS-class Covenant Assault Carrier (Aft)",
+						"quantity": 1,
+						"elementPropertyName": "massiveShips"
+					}
+				],
+				"decreaseModelCount": 3,
+				"specialRules": [
+					"Cathedral of the Faithful",
+					"Seraph Hosts",
+					"Limited Resources"
+				]
+			},
+			{
+				"name": "Punic-class Supercarrier",
+				"points": 675,
+				"factions": [
+					{
+						"name": "UNSC",
+						"heroicTier": "Massive"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "massiveShips",
+						"name": "Punic-class Supercarrier (Fore)"
+					},
+					{
+						"dataSource": "massiveShips",
+						"name": "Punic-class Supercarrier (Aft)"
+					},
+					{
+						"dataSource": "massiveShips",
+						"name": "Punic-class Supercarrier (Mid)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "Punic-class Supercarrier (Fore)",
+						"quantity": 1,
+						"elementPropertyName": "massiveShips"
+					},
+					{
+						"name": "Punic-class Supercarrier (Aft)",
+						"quantity": 1,
+						"elementPropertyName": "massiveShips"
+					},
+					{
+						"name": "Punic-class Supercarrier (Mid)",
+						"quantity": 1,
+						"elementPropertyName": "massiveShips"
+					}
+				],
+				"decreaseModelCount": 3,
+				"specialRules": [
+					"Frigate Resupply",
+					"Automated Repair Systems",
+					"Limited Resources"
+				]
+			},
+			{
+				"name": "Golden Path",
+				"points": 240,
+				"factions": [
+					{
+						"name": "Covenant",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "capitalShips",
+						"name": "CCS Armored Cruiser (Reinforced)"
+					},
+					{
+						"dataSource": "smallShips",
+						"name": "SDV Heavy Corvette (Line Formation)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "SDV Heavy Corvette (Line Formation)",
+						"quantity": 1,
+						"elementPropertyName": "smallShips"
+					},
+					{
+						"name": "CCS Armored Cruiser (Reinforced)",
+						"quantity": 1,
+						"elementPropertyName": "capitalShips"
+					}
+				],
+				"decreaseModelCount": 1,
+				"specialRules": [
+					"Command Centre"
+				]
+			},
+			{
+				"name": "Supplicants",
+				"points": 180,
+				"factions": [
+					{
+						"name": "Covenant",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "smallShips",
+						"name": "SDV Heavy Corvette (Tri-Formation)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "SDV Heavy Corvette (Tri-Formation)",
+						"quantity": 3,
+						"elementPropertyName": "smallShips"
+					}
+				],
+				"decreaseModelCount": 3,
+				"specialRules": [
+					"Hunter Killers"
+				]
+			},
+			{
+				"name": "Penitents (Paired CCS)",
+				"points": 260,
+				"factions": [
+					{
+						"name": "Covenant",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "capitalShips",
+						"name": "CCS Battlecruisers (Paired)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "CCS Battlecruisers (Paired)",
+						"quantity": 1,
+						"elementPropertyName": "capitalShips"
+					}
+				],
+				"decreaseModelCount": 1,
+				"specialRules": [
+					"Focused Wrath"
+				]
+			},
+			{
+				"name": "Penitents (Paired RCS)",
+				"points": 220,
+				"factions": [
+					{
+						"name": "Covenant",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "capitalShips",
+						"name": "RCS Armored Cruisers (Penitent)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "RCS Armored Cruisers (Penitent)",
+						"quantity": 1,
+						"elementPropertyName": "capitalShips"
+					}
+				],
+				"decreaseModelCount": 1,
+				"specialRules": [
+					"Focused Wrath",
+					"Penitents"
+				]
+			},
+			{
+				"name": "Cerberus",
+				"points": 200,
+				"factions": [
+					{
+						"name": "UNSC",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "capitalShips",
+						"name": "Marathon Heavy Cruiser (Paired)"
+					}
+				],
+				"lockedChildren": true,
+				"requiredChildren": [
+					{
+						"name": "Marathon Heavy Cruiser (Paired)",
+						"elementPropertyName": "capitalShips"
+					}
+				],
+				"decreaseModelCount": 1,
+				"specialRules": [
+					"Wall of Fire"
+				]
+			},
+			{
+				"name": "Shield Wall",
+				"points": 120,
+				"factions": [
+					{
+						"name": "UNSC",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "smallShips",
+						"name": "Paris Class Frigates (Shield Formation)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "Paris Class Frigates (Shield Formation)",
+						"quantity": 3,
+						"elementPropertyName": "smallShips"
+					}
+				],
+				"decreaseModelCount": 3,
+				"specialRules": [
+					"Pack Hunters"
+				]
+			},
+			{
+				"name": "Barrage",
+				"points": 270,
+				"factions": [
+					{
+						"name": "UNSC",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "capitalShips",
+						"name": "Marathon Heavy Cruiser (Reinforced)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "Marathon Heavy Cruiser (Reinforced)",
+						"quantity": 2,
+						"elementPropertyName": "capitalShips"
+					}
+				],
+				"decreaseModelCount": 2,
+				"specialRules": [
+					"Advanced Targeting Solution"
+				]
+			},
+			{
+				"name": "Chimera",
+				"points": 220,
+				"factions": [
+					{
+						"name": "UNSC",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "capitalShips",
+						"name": "Halcyon Light Cruiser (Reinforced)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "Halcyon Light Cruiser (Reinforced)",
+						"quantity": 2,
+						"elementPropertyName": "capitalShips"
+					}
+				],
+				"decreaseModelCount": 2,
+				"specialRules": [
+					"Wall of Fire"
+				]
+			},
+			{
+				"name": "Orthus",
+				"points": 350,
+				"factions": [
+					{
+						"name": "UNSC",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "capitalShips",
+						"name": "Epoch Heavy Carrier"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "Epoch Heavy Carrier",
+						"points": 0,
+						"quantity": 2,
+						"elementPropertyName": "capitalShips"
+					}
+				],
+				"decreaseModelCount": 2,
+				"specialRules": [
+					"Prototype Wings"
+				]
+			},
+			{
+				"name": "Cyclops",
+				"points": 185,
+				"factions": [
+					{
+						"name": "UNSC",
+						"heroicTier": "Specialist"
+					}
+				],
+				"includes": [
+					{
+						"dataSource": "capitalShips",
+						"name": "Marathon Heavy Cruiser (Supported)"
+					},
+					{
+						"dataSource": "smallShips",
+						"name": "Paris Class Frigates (Trident Formation)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "Marathon Heavy Cruiser (Supported)",
+						"quantity": 1,
+						"elementPropertyName": "capitalShips"
+					},
+					{
+						"name": "Paris Class Frigates (Trident Formation)",
+						"quantity": 3,
+						"elementPropertyName": "smallShips"
+					}
+				],
+				"decreaseModelCount": 2,
+				"specialRules": [
+					"Carrier Refit"
+				]
+			}
+		],
+		"smallShips": [
+			{
+				"name": "Covenant CAR Frigate (Oblique)",
+				"points": 40,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 1,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20car%20frigate%20(oblique).png?raw=true"
+			},
+			{
+				"name": "SDV Heavy Corvette (Line Formation)",
+				"points": 40,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 1,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/sdv%20heavy%20corvette%20(line%20formation).png?raw=true"
+			},
+			{
+				"name": "SDV Heavy Corvette (Oblique Formation)",
+				"points": 40,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 1,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/sdv%20heavy%20corvette%20(oblique%20formation).png?raw=true"
+			},
+			{
+				"name": "SDV Heavy Corvette (Tri-Formation)",
+				"autoAddOnly": true,
+				"points": 60,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 2,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/sdv%20heavy%20corvette%20(tri-formation).png?raw=true"
+			},
+			{
+				"name": "ADP Escort (Tri-Formation)",
+				"points": 20,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 1,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/adp%20escort%20(tri-formation).png?raw=true",
+				"specialRules": [
+					"ADP Escorts"
+				]
+			},
+            {
+				"name": "Halberd Destroyers (Axe Formation)",
+				"points": 50,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 2,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halberd%20destroyers%20(axe%20formation).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"points": 10,
+						"increment": true,
+						"max": 1,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 1
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Paris Class Frigates (Arrowhead Formation)",
+				"points": 25,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 1,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(arrowhead).png?raw=true",
+                "boardingCraft": [],
+                "hangar": []
+            },
+			{
+				"name": "Paris Class Frigates (Shield Formation)",
+				"points": 40,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 2,
+				"autoAddOnly": true,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(shield%20formation).png?raw=true",
+                "boardingCraft": [],
+                "hangar": []
+            },
+			{
+				"name": "Paris Class Frigates (Trident Formation)",
+				"points": 25,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 1,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(trident%20formation).png?raw=true",
+                "boardingCraft": [],
+                "hangar": []
+            }
+		],
+		"capitalShips": [
+			{
+				"name": "DSC Support Ship",
+				"points": 95,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 2,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "DSC Support Ship (Supported)",
+				"points": 115,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "DSC Support Ship (Reinforced)",
+				"points": 135,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship%20(reinforced).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "DSC Support Ship (Escorted)",
+				"points": 115,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship%20(escorted).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "DSC Support Ship (Defended)",
+				"points": 135,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship%20(defended).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "CPV Heavy Destroyer",
+				"points": 110,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 2,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[],
+				"specialRules": [
+					"Penitents",
+					"*High Value Target"
+				]
+			},
+			{
+				"name": "CPV Heavy Destroyer (Supported)",
+				"points": 130,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[],
+				"specialRules": [
+					"Penitents",
+					"*High Value Target"
+				]
+			},
+			{
+				"name": "CPV Heavy Destroyer (Escorted)",
+				"points": 130,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer%20(escorted).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[],
+				"specialRules": [
+					"Penitents",
+					"*High Value Target"
+				]
+			},
+			{
+				"name": "CPV Heavy Destroyer (Defended)",
+				"points": 150,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer%20(defended).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[],
+				"specialRules": [
+					"Penitents",
+					"*High Value Target"
+				]
+			},
+			{
+				"name": "RCS Armored Cruiser",
+				"points": 125,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 2,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "RCS Armored Cruiser (Supported)",
+				"points": 140,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "RCS Armored Cruiser (Escorted)",
+				"points": 140,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(escorted).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "RCS Armored Cruiser (Defended)",
+				"points": 160,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(defended).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "RCS Armored Cruiser (Reinforced)",
+				"points": 160,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(reinforced).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "RCS Armored Cruisers (Penitent)",
+				"autoAddOnly": true,
+				"points": 220,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 6,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruisers%20(penitent).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 5,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 5,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 5,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 5,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[],
+				"specialRules": [
+					"Penitents"
+				]
+			},
+			{
+				"name": "CCS Battlecruiser",
+				"points": 150,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "CCS Battlecruiser (Escorted)",
+				"points": 170,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(escorted).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "CCS Battlecruiser (Supported)",
+				"points": 170,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "CCS Battlecruiser (Defended)",
+				"points": 190,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(defended).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "CCS Battlecruiser (Reinforced)",
+				"autoAddOnly": true,
+				"points": 200,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 5,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(reinforced).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "CCS Battlecruisers (Paired)",
+				"autoAddOnly": true,
+				"points": 260,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 8,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruisers%20(paired).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 4,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "Blockade Runner",
+				"points": 170,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/blockade%20runner.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "Blockade Runner (Escorted)",
+				"points": 190,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/blockade%20runner%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[],
+				"specialRules": [
+					"Hidden Killer (Blockade Runner)"
+				]
+			},
+			{
+				"name": "Carrack Merchant Cruiser",
+				"points": 145,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/carrack%20merchant%20cruiser.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[],
+				"specialRules": [
+					"Plasma Beam Overload",
+					"Hunter Assault Cadres"
+				]
+			},
+			{
+				"name": "Carrack Merchant Cruiser (Supported)",
+				"points": 160,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/carrack%20merchant%20cruiser%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[],
+				"specialRules": [
+					"Plasma Beam Overload",
+					"Hunter Assault Cadres"
+				]
+			},
+			{
+				"name": "Carrack Merchant Cruiser (Escorted)",
+				"points": 165,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/carrack%20merchant%20cruiser%20(escorted).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[],
+				"specialRules": [
+					"Plasma Beam Overload",
+					"Hunter Assault Cadres"
+				]
+			},
+			{
+				"name": "ORS Heavy Cruiser",
+				"points": 200,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ors%20heavy%20cruiser.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "ORS Heavy Cruiser (Supported)",
+				"points": 220,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 5,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ors%20heavy%20cruiser%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "DDS-class Carrier",
+				"points": 200,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dds-class%20carrier.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "DDS-class Carrier (Supported)",
+				"points": 220,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 5,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dds-class%20carrier%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "Eion Light Carrier",
+				"points": 85,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 2,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20eion%20light%20carrier.png?raw=true",
+				"boardingCraft": [],
+                "hangar": [
+                    {
+                        "name": "Broadsword Interceptors",
+                        "increment": true,
+                        "max": 4,
+                        "points": 0
+                    },
+                    {
+                        "name": "Longsword Bombers",
+                        "increment": true,
+                        "max": 4,
+                        "points": 0
+                    }
+                ],
+                "hangar":[]
+			},
+			{
+				"name": "Eion Light Carrier (Supported)",
+				"points": 100,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20supported%20eion%20light%20carrier.png?raw=true",
+				"boardingCraft": [],
+                "hangar": [
+                    {
+                        "name": "Broadsword Interceptors",
+                        "increment": true,
+                        "max": 4,
+                        "points": 0
+                    },
+                    {
+                        "name": "Longsword Bombers",
+                        "increment": true,
+                        "max": 4,
+                        "points": 0
+                    }
+                ]
+			},
+			{
+				"name": "Halcyon Light Cruiser",
+				"points": 75,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 2,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Halcyon Light Cruiser (Supported)",
+				"points": 90,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				]
+			},
+			{
+				"name": "Halcyon Light Cruiser (Escorted)",
+				"points": 95,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(escorted).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Halcyon Light Cruiser (Defended)",
+				"points": 120,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(defended).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Halcyon Light Cruiser (Reinforced)",
+				"points": 110,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(reinforced).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				],
+                "hangar": [],
+                "autoAddOnly": true
+			},
+			{
+				"name": "Marathon Heavy Cruiser",
+				"points": 95,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 2,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser.png?raw=true",
+				"boardingCraft": [
+                    {
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Marathon Heavy Cruiser (Supported)",
+				"points": 110,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Marathon Heavy Cruiser (Reinforced)",
+				"points": 135,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser%20(reinforced).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				],
+                "hangar": [],
+                "autoAddOnly": true
+			},
+			{
+				"name": "Marathon Heavy Cruiser (Paired)",
+				"points": 200,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 6,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser%20(paired).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 4,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 4
+					}
+				],
+                "hangar": [],
+                "autoAddOnly": true
+			},
+			{
+				"name": "Autumn Heavy Cruiser",
+				"points": 100,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 2,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/autumn%20heavy%20cruiser.png?raw=true",
+				"specialRules": [
+					"Advanced Targeting",
+					"ODST Strike Teams"
+				],
+				"boardingCraft": [
+                    {
+						"name": "ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 5
+					},
+                    {
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Autumn Heavy Cruiser (Escorted)",
+				"points": 120,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/autumn%20heavy%20cruiser%20(escorted).png?raw=true",
+				"specialRules": [
+					"Advanced Targeting",
+					"ODST Strike Teams"
+				],
+				"boardingCraft": [
+					{
+						"name": "ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 5
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Valiant Super-Heavy Cruiser",
+				"points": 115,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser.png?raw=true",
+				"specialRules": [
+					"*High Value Target"
+				],
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Valiant Super-Heavy Cruiser (Supported)",
+				"points": 135,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser%20(supported).png?raw=true",
+				"specialRules": [
+					"*High Value Target"
+				],
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Valiant Super-Heavy Cruiser (Escorted)",
+				"points": 135,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser%20(escorted).png?raw=true",
+				"specialRules": [
+					"*High Value Target"
+				],
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				]
+			},
+			{
+				"name": "Valiant Super-Heavy Cruiser (Defended)",
+				"points": 160,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser%20(defended).png?raw=true",
+				"specialRules": [
+					"*High Value Target"
+				],
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Orion Assault Carrier",
+				"points": 120,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 4,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 4
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Orion Assault Carrier (Supported)",
+				"points": 135,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 4,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 5
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Orion Assault Carrier (Escorted)",
+				"points": 145,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(escorted).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 5,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 5
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Orion Assault Carrier (Reinforced)",
+				"points": 150,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(reinforced).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 4,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 4
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Orion Assault Carrier (Defended)",
+				"points": 160,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(defended).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 5,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 5
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Orion Assault Carrier (Combat)",
+				"autoAddOnly": true,
+				"points": 165,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 5,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(combat).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 4,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 4
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Epoch Heavy Carrier",
+				"points": 175,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/epoch%20heavy%20carrier.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Epoch Heavy Carrier (Supported)",
+				"points": 190,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 5,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/epoch%20heavy%20carrier%20(supported).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Epoch Heavy Carrier (Defended)",
+				"points": 220,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 5,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/epoch%20heavy%20carrier%20(defended).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Phoenix-Class Colonial Support Vessel",
+				"points": 200,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 4,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/phoenix-class%20colonial%20support%20vessel.png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 6,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 6
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "UNSC Phoenix (Guardian Spirit Formation)",
+				"points": 260,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 6,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20phoenix%20(guardian%20spirit%20formation).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 7,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 7
+					}
+				],
+                "hangar": [],
+                "autoAddOnly": true
+			}			
+		],
+		"massiveShips": [ 
+            {
+				"name": "CAS-class Covenant Assault Carrier (Fore)",
+				"autoAddOnly": true,
+				"points": 750,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 12,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cas-class%20covenant%20assault%20carrier%20(fore).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 3,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "CAS-class Covenant Assault Carrier (Mid)",
+				"autoAddOnly": true,
+				"points": 0,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 6,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cas-class%20covenant%20assault%20carrier%20(mid).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 5,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 5,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 5,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 5,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+			{
+				"name": "CAS-class Covenant Assault Carrier (Aft)",
+				"autoAddOnly": true,
+				"points": 0,
+				"factions": [
+					"Covenant"
+				],
+				"buildRating": 5,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cas-class%20covenant%20assault%20carrier%20(aft).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Fleet Commander"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Xytan 'Jar Wattinree"
+					},
+					{
+						"name": "Zealot",
+						"points": 10,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Minister of Etiology"
+					},
+					{
+						"name": "Type-28 Boarding Craft replaced with Hunter Assault Cadres",
+						"points": 15,
+						"increment": true,
+						"max": 2,
+						"unlockedBy": "Covenant Assault Commander"
+					}
+				],
+                "hangar":[]
+			},
+            {
+				"name": "Punic-class Supercarrier (Fore)",
+				"autoAddOnly": true,
+				"points": 675,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 5,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/punic-class%20supercarrier%20(fore).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Punic-class Supercarrier (Aft)",
+				"autoAddOnly": true,
+				"points": 0,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 5,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/punic-class%20supercarrier%20(aft).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 5,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 5
+					}
+				],
+                "hangar": []
+			},
+			{
+				"name": "Punic-class Supercarrier (Mid)",
+				"autoAddOnly": true,
+				"points": 0,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 6,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/punic-class%20supercarrier%20(mid).png?raw=true",
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 3,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 3
+					}
+				],
+                "hangar": []
+			}
+        ],
+        "emplacementPlatforms": [
+            {
+				"name": "MAC Platform",
+				"points": 160,
+				"factions": [
+					"UNSC"
+				],
+				"buildRating": 3,
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/mac%20platform.png?raw=true",
+				"specialRules": [
+					"Fighter Cover",
+					"Vital Defensive Asset"
+				],
+				"boardingCraft": [
+					{
+						"name": "Pelican Boarding Craft replaced with ODST Strike Teams",
+						"increment": true,
+						"max": 2,
+						"points": 10,
+						"unlockedBy": "UNSC Assault Commander"
+					},
+					{
+						"name": "Spartan",
+						"points": 40,
+						"increment": true,
+						"max": 2
+					}
+				],
+                "hangar": []
+			}
+        ],
+        "keywords": [
+			{
+				"name": "Plasma Beam Overload",
+				"definition": "This Formation may choose to overload its Plasma Beam. This formation immediately gains a Vulnerable Marker and increases the Attack Dice of the Plasma Beam by +3 until the end of the Game Turn."
+			},
+			{
+				"name": "Hunter Assault Cadres",
+				"definition": "This Formation begins the game with all its Type-28 Boarding Craft packed with Hunter Assault Cadres for no additional cost."
+			},
+			{
+				"name": "Cathedral of the Faithful",
+				"definition": "Each Section on a CAS can replace ONE of its listed Boarding Craft with a Zealot for No Points. This bonus is in addition to the standard number of Zealots available to the fleet."
+			},
+			{
+				"name": "Seraph Hosts",
+				"definition": "All Seraph Interceptor Wings launched by a CAS increase their maximum size to 6 rather than the normal 5."
+			},
+			{
+				"name": "Command Centre",
+				"definition": "A Fleet Containing a Golden Path Battle Group may re-roll a Single Order Dice at the beginning of either the Attacks or Boarding Segments (but not both)."
+			},
+			{
+				"name": "Hunter Killers",
+				"definition": "All Elements in this Battle Group may re-roll any Initial Rolls of a Skull when firing Plasma Torpedoes at Short Range."
+			},
+			{
+				"name": "Focused Wrath",
+				"definition": "All Plasma Cannon Array Attacks made by this Element may re-roll a single Attack Dice for each friendly Zealot on board."
+			},
+			{
+				"name": "ADP Escorts",
+				"definition": "All ADP Escort Formations in a Battle Group can add their Point Defense to that of any Capital Formation in the same Battle Group, but only when the Capital Formation is attacked by weapons with the Missiles Loadout."
+			},
+			{
+				"name": "Penitents",
+				"definition": "SecurityDetails on this Element are considered to have the Assault Specialist (1) Loadout."
+			},
+			{
+				"name": "Hidden Killer (Blockade Runner)",
+				"definition": "Any Ranged Attack made against this Vessel from more than 20” away suffers further -1 to its Firepower Rating."
+			},
+			{
+				"name": "Hidden Killer",
+				"definition": "All Elements in this Battle Group may re-roll any Initial Rolls of a Skull when firing Plasma Torpedoes at Short Range."
+			},
+			{
+				"name": "Plasma Beam Overload",
+				"definition": "All Elements in this Battle Group may re-roll any Initial Rolls of a Skull when firing Plasma Beam Weapons."
+			},
+			{
+				"name": "Hunter Assault Cadres",
+				"definition": "All Elements in this Battle Group may re-roll any Initial Rolls of a Skull when firing Plasma Torpedoes at Short Range."
+			},
+			{
+				"name": "Fire at Will!",
+				"definition": "When executing the Increased Wirepower order, add +4 Attack Dice to the firing solution instead of +2"
+			},
+			{
+				"name": "Strength in Numbers!",
+				"definition": "Add 2 to your Faction's Wing Size Limits"
+			},
+			{
+				"name": "Brilliant Strategy!",
+				"definition": "When rolling the Order Dice during the Order Dice Phase, you may reroll 1 Order Dice. The second result must be kept.\n        When you spend an Order Dice on an order, roll a regular D6 after resolving the order; on a 5 or 6 do not remove the Order Dice from your Data Sheet."
+			},
+			{
+				"name": "Take it to Them!",
+				"definition": "You may reroll your D6 when involved in boarding action. As well, you may purchase special boarding craft as follows:\n        -Any UNSC Element may have any number of its Pelican Boarding Craft replaced with ODST Strike Teams for a total of +10 points per Team."
+			},
+			{
+				"name": "Wall of Fire",
+				"definition": "This Battle Group may roll 2 Halo dice rather than 1 when resolving the effects of MAC Loadout, prior to the Defense Dice Pool being rolled."
+			},
+			{
+				"name": "Pack Hunters",
+				"definition": "All Elements in this Battle Group may re-roll any Initial Rolls of a [skull] when firing MACs - These re-rolled dice may NOT generate any further re-rolls."
+			},
+			{
+				"name": "Advanced Targeting Solution",
+				"definition": "All Attacks made by this Battle Group may re-roll any attempt to cause a Critical Hit."
+			},
+			{
+				"name": "Carrier Refit",
+				"definition": "The Supported Marathon loses its Missile Barrage Loadout but gains the Carrier (1) Loadout. Additionally, the Supported Marathon in the Cyclops SBG has a Hanger Rating of 5, instead of the 2 it would normally have."
+			},
+			{
+				"name": "Frigate Resupply",
+				"definition": "During the Repairs Step of and End Phase, a Punic may allow a Single Paris Element within 10” to remove a Single Damage Marker from its base. Where applicable, this Can restore Titanium Armor."
+			},
+			{
+				"name": "Automated Repair Systems",
+				"definition": "Each time a Vulnerable Marker is applied to a section of the Punic, roll a Halo Dice: on a [1] or [2], the Vulnerable Marker is immediately removed."
+			},
+			{
+				"name": "Limited Resources",
+				"definition": "All Punics and CAS exist as individual Battle Groups and are not required to follow the standard rules for Battle Group Creation.\nWhilst they are not Specialist Battle Groups, they are restricted by the size of Fleet they are attached to. Therefore a single Punic or CAS can be included in a Fleet for every Full 1250 Points being played."
+			},
+			{
+				"name": "Advanced Targeting",
+				"definition": "This Formation may choose to re-roll any INITIAL rolls of a [skull] when performaing an attack with its Heavy MAC Cannon. These dice must be rolled separately. The Attack then moves to the Re-roll Step as normal"
+			},
+			{
+				"name": "ODST Strike Teams",
+				"definition": "This Formation begins the game with all its Pelican Boarding Craft embarked with ODST Strike Teams for an additional +5 points each."
+			},
+			{
+				"name": "Fighter Cover",
+				"definition": "Only Interceptors can be selected by MAC Platforms. Bombers are not available."
+			},
+			{
+				"name": "Vital Defensive Asset",
+				"definition": "A Maximum of 2 MAC Platforms per FULL 1000 points are permitted."
+			},
+			{
+				"name": "*High Value Target",
+				"definition": "This vessel is considered to have a Build Rating of One less than listed during the process of Fleet Building, reverting to its stated Build Rating for the purposes of calculating Victory Points only."
+			}
+		],
+		"armyBonuses": [],
+		"commanders": [
+			{
+				"name": "UNSC Assault Commander",
+				"points": 50,
+				"factions": [
+					{
+						"name": "UNSC"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20assault%20commander.png?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "UNSC Fleet Commander",
+				"points": 50,
+				"factions": [
+					{
+						"name": "UNSC"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20fleet%20commander.png?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "UNSC Gunnery Commander",
+				"points": 50,
+				"factions": [
+					{
+						"name": "UNSC"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20gunnery%20commander.png?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "UNSC Wing Commander",
+				"points": 50,
+				"factions": [
+					{
+						"name": "UNSC"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20wing%20commander.png?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Covenant Fleet Commander",
+				"points": 50,
+				"factions": [
+					{
+						"name": "Covenant"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20fleet%20commander.png?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Covenant Assault Commander",
+				"points": 50,
+				"factions": [
+					{
+						"name": "Covenant"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20assault%20commander.png?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Covenant Gunnery Commander",
+				"points": 50,
+				"keywords": [
+					"Fire at Will!"
+				],
+				"factions": [
+					{
+						"name": "Covenant"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20gunnery%20commander.png?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Covenant Wing Commander",
+				"points": 50,
+				"factions": [
+					{
+						"name": "Covenant"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20wing%20commander.png?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Lord Hood",
+				"points": 120,
+				"factions": [
+					{
+						"name": "UNSC"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/lord%20hood.jpg?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Michael Stanforth",
+				"points": 100,
+				"factions": [
+					{
+						"name": "UNSC"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/michael%20stanforth.jpg?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Preston Cole",
+				"points": 140,
+				"factions": [
+					{
+						"name": "UNSC"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/preston%20cole.jpg?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Cortana",
+				"points": 80,
+				"factions": [
+					{
+						"name": "UNSC"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cortana.jpg?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Xytan 'Jar Wattinree",
+				"points": 120,
+				"factions": [
+					{
+						"name": "Covenant"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/xytan%20jar%20wattinree.jpg?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Minister of Etiology",
+				"points": 80,
+				"factions": [
+					{
+						"name": "Covenant"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/minister%20of%20etiology.jpg?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Maccabeus",
+				"points": 80,
+				"factions": [
+					{
+						"name": "Covenant"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/maccabeus.jpg?raw=true",
+				"imageOrientation": "portrait"
+			},
+			{
+				"name": "Lighter Than Some",
+				"points": 40,
+				"factions": [
+					{
+						"name": "Covenant"
+					}
+				],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/lighter%20than%20some.jpg?raw=true",
+				"imageOrientation": "portrait"
+			}
+		]
+	}
+}
