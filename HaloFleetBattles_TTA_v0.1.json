@@ -80,7 +80,16 @@
         "boardingCrafts"
 	],
 	"limits": [],
-	"counts": [],
+	"counts": [
+        {
+            "property": "buildRating",
+            "label": "Build Rating"
+        },
+        {
+            "property": "hangarCapacity",
+            "label": "Hangar"
+        }
+    ],
 	"calculations": [],
 	"validations": [],
 	"leaderConfig": {
@@ -281,7 +290,9 @@
 						"heroicTier": "Standard"
 					}
 				],
-				"decreaseModelCount": 1
+				"decreaseModelCount": 1,
+                "unlimited": true
+                
 			},
             {
 				"name": "Emplacement",
@@ -2048,27 +2059,36 @@
 			{
 				"name": "Eion Light Carrier",
 				"points": 85,
+                
 				"factions": [
 					"UNSC"
-				],
-				"buildRating": 2,
+				],				
+                "movement": 7,
+                "damageTrack1st": 5,
+                "damageTrack2nd": 4,
+                "damageTrack3rd": 4,
+                "buildRating": 2,
+                "hangarCapacity": 3,
+                "boardingCraft": 0,
+                "securityDetail": 2,
+                "primaryWeapon": 5,
+                "secondaryWeapon": 6,
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20eion%20light%20carrier.png?raw=true",
 				"boardingCraft": [],
                 "hangar": [
                     {
                         "name": "Broadsword Interceptors",
                         "increment": true,
-                        "max": 4,
+                        "max": 3,
                         "points": 0
                     },
                     {
                         "name": "Longsword Bombers",
                         "increment": true,
-                        "max": 4,
+                        "max": 3,
                         "points": 0
                     }
-                ],
-                "hangar":[]
+                ]
 			},
 			{
 				"name": "Eion Light Carrier (Supported)",
