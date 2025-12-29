@@ -93,13 +93,18 @@
                         },
                         {
                             "name": "Specialist",
+                            "maximumChildren": {
+                                "smallShips": 0,
+                                "capitalShips": 0,
+                                "boardingSpecialists": 0
+                            },
                             "rank": 2
                         },
                         {
                             "name": "Commander",
                             "maximumChildren": {
-                                "smallShips": 1,
-                                "capitalShips": 1,
+                                "smallShips": 0,
+                                "capitalShips": 0,
                                 "boardingSpecialists": 1
                             },
                             "rank": 3
@@ -111,14 +116,44 @@
                             "dataSource": "smallShips",
                             "propertyName": "smallShips",
                             "label": "Small Ship",
-                            "type": "list"
+                            "type": "list",
+                            "children":[
+                                {
+                                    "propertyName": "hangars",
+                                    "dataSource": "fighters",
+                                    "label": "Interceptors/Bombers",
+                                    "type": "checkbox"
+                                },
+                                {
+                                    "singleKey": "boardingSpecialist",
+                                    "dataSource": "boardingSpecialists",
+                                    "propertyName": "boardingSpecialists",
+                                    "label": "Boarding Specialists",
+                                    "type": "checkbox"
+                                }
+                            ]
                         },
                         {
                             "singleKey": "capitalShip",
                             "dataSource": "capitalShips",
                             "propertyName": "capitalShips",
                             "label": "Capital Ship",
-                            "type": "list"
+                            "type": "list",
+                            "children":[
+                                {
+                                    "propertyName": "hangars",
+                                    "dataSource": "fighters",
+                                    "label": "Interceptors/Bombers",
+                                    "type": "checkbox"
+                                },
+                                {
+                                    "singleKey": "boardingSpecialist",
+                                    "dataSource": "boardingSpecialists",
+                                    "propertyName": "boardingSpecialists",
+                                    "label": "Boarding Specialists",
+                                    "type": "checkbox"
+                                }
+                            ]
                         },
                         {
                             "singleKey": "boardingSpecialist",
@@ -412,12 +447,13 @@
                 "name": "Maccabeus",
                 "alignment": "covenant",
                 "uniqueAbilities": [
+                    "Brutes",
                     "Blind Devotion",
                     "Fleet Restrictions"
                 ],
                 "standardOrders": [
                     "\"Brutal Attack\"",
-                    "\"Power To the Defenses\"",
+                    "\"Power To The Defenses!\"",
                     "\"Form Up!\""
                 ],
                 "specialOrders": [
@@ -519,6 +555,9 @@
                     }
                 ],
                 "autoAddOnly": true,
+                "limitChildren":[
+                    "boardingSpecialist"
+                ],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20assault%20commander.png?raw=true",
                 "imageOrientation": "portrait"
             },
@@ -1786,7 +1825,9 @@
                 ],
 				"buildRating": 1,
                 "hangarCapacity": 0,
+                "hangars": [],
                 "boardingCraft": 0,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/adp%20escort%20(tri-formation).png?raw=true",
 				"specialRules": [
 					"ADP Escorts"
@@ -1806,7 +1847,9 @@
                 ],
                 "buildRating": 1,
                 "hangarCapacity": 0,
+                "hangars": [],
                 "boardingCraft": 1,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20car%20frigate%20(oblique).png?raw=true"
             },
             {
@@ -1823,7 +1866,22 @@
                 ],
 				"buildRating": 1,
                 "hangarCapacity": 1,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+                        "increment": true,
+                        "max": 1,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 0,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/sdv%20heavy%20corvette%20(line%20formation).png?raw=true"
 			},
 			{
@@ -1840,7 +1898,22 @@
                 ],
 				"buildRating": 1,
                 "hangarCapacity": 1,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 0,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/sdv%20heavy%20corvette%20(oblique%20formation).png?raw=true"
 			},
             {
@@ -1858,7 +1931,22 @@
                 "autoAddOnly": true,
                 "buildRating": 2,
                 "hangarCapacity": 1,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 0,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/sdv%20heavy%20corvette%20(tri-formation).png?raw=true"
             },
             {
@@ -1875,7 +1963,9 @@
                 ],
                 "buildRating": 2,
                 "hangarCapacity": 0,
+                "hangars": [],
                 "boardingCraft": 1,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halberd%20destroyers%20(axe%20formation).png?raw=true"
             },
             {
@@ -1892,7 +1982,9 @@
                 ],
                 "buildRating": 1,
                 "hangarCapacity": 0,
+                "hangars": [],
                 "boardingCraft": 0,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(arrowhead).png?raw=true"
             },
             {
@@ -1910,7 +2002,9 @@
                 "autoAddOnly": true,
                 "buildRating": 2,
                 "hangarCapacity": 0,
+                "hangars": [],
                 "boardingCraft": 0,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(shield%20formation).png?raw=true"
             },
             {
@@ -1927,7 +2021,9 @@
                 ],
                 "buildRating": 1,
                 "hangarCapacity": 0,
+                "hangars": [],
                 "boardingCraft": 0,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(trident%20formation).png?raw=true"
             }
         ],
@@ -1945,6 +2041,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 2,
+                "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship.png?raw=true"
 			},
 			{
@@ -1960,6 +2073,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 4,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship%20(supported).png?raw=true"
 			},
 			{
@@ -1975,6 +2105,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 5,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship%20(escorted).png?raw=true"
 			},
             {
@@ -1990,6 +2137,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 4,
+                "hangarCapacity": 5,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 5,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 5,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship%20(reinforced).png?raw=true"
 			},
 			{
@@ -2005,6 +2169,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 5,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dsc%20support%20ship%20(defended).png?raw=true"
 			},
 			{
@@ -2020,6 +2201,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 2,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer.png?raw=true",
 				"specialRules": [
 					"Penitents"
@@ -2038,6 +2236,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer%20(supported).png?raw=true",
 				"specialRules": [
 					"Penitents"
@@ -2056,6 +2271,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer%20(escorted).png?raw=true",
                 "specialRules": [
 					"Penitents"
@@ -2074,6 +2306,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer%20(defended).png?raw=true",
 				"specialRules": [
 					"Penitents"
@@ -2092,6 +2341,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 2,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser.png?raw=true"
 			},
 			{
@@ -2107,6 +2373,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(supported).png?raw=true"
 			},
 			{
@@ -2122,6 +2405,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 0,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(escorted).png?raw=true"
 			},
 			{
@@ -2137,6 +2437,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 1,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(defended).png?raw=true"
 			},
 			{
@@ -2152,6 +2469,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 4,
+                "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(reinforced).png?raw=true"
 			},
 			{
@@ -2168,6 +2502,23 @@
                 ],
 				"autoAddOnly": true,
                 "buildRating": 6,
+                "hangarCapacity": 4,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 5,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruisers%20(penitent).png?raw=true",
 				"specialRules": [
 					"Penitents"
@@ -2187,11 +2538,43 @@
                 ],
                 "buildRating": 3,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 2,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
             },
 			{
 				"name": "CCS Battlecruiser (Supported)",
 				"points": 170,
+                "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 2,
 				"factions": [
                     "Covenant Assault Commander",
                     "Covenant Fleet Commander",
@@ -2202,6 +2585,7 @@
                     "Maccabeus"
                 ],
 				"buildRating": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(supported).png?raw=true"
 			},
             {
@@ -2217,6 +2601,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 4,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 2,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(escorted).png?raw=true"
 			},
 			{
@@ -2233,6 +2634,23 @@
                 ],
 				"autoAddOnly": true,
                 "buildRating": 5,
+                "hangarCapacity": 5,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 5,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 5,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(reinforced).png?raw=true"
 			},
             {
@@ -2248,6 +2666,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 4,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 2,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(defended).png?raw=true"
 			},
 			{
@@ -2264,6 +2699,23 @@
                 ],
 				"autoAddOnly": true,
                 "buildRating": 8,
+                "hangarCapacity": 4,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruisers%20(paired).png?raw=true",
                 "specialRules": [
 					"Penitents"
@@ -2282,9 +2734,26 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/blockade%20runner.png?raw=true",
                 "specialRules": [
-					"Hidden Killer (Blockade Runner)"
+					"Hidden Killer"
 				]
 			},
 			{
@@ -2300,9 +2769,26 @@
                     "Maccabeus"
                 ],
 				"buildRating": 4,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/blockade%20runner%20(escorted).png?raw=true",
 				"specialRules": [
-					"Hidden Killer (Blockade Runner)"
+					"Hidden Killer"
 				]
 			},
 			{
@@ -2318,6 +2804,10 @@
                     "Maccabeus"
                 ],
 				"buildRating": 3,
+                "hangarCapacity": 0,
+                "hangars": [],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/carrack%20merchant%20cruiser.png?raw=true",
 				"specialRules": [
 					"Plasma Beam Overload",
@@ -2337,6 +2827,10 @@
                     "Maccabeus"
                 ],
 				"buildRating": 4,
+                "hangarCapacity": 0,
+                "hangars": [],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/carrack%20merchant%20cruiser%20(escorted).png?raw=true",
 				"specialRules": [
 					"Plasma Beam Overload",
@@ -2356,6 +2850,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 4,
+                "hangarCapacity": 5,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 5,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 5,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ors%20heavy%20cruiser.png?raw=true"
 			},
 			{
@@ -2371,6 +2882,23 @@
                     "Maccabeus"
                 ],
 				"buildRating": 5,
+                "hangarCapacity": 6,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 6,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 6,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ors%20heavy%20cruiser%20(supported).png?raw=true"
 			},
 			{
@@ -2386,6 +2914,76 @@
                     "Maccabeus"
                 ],
 				"buildRating": 4,
+                "limitChildren":[
+                    {
+                        "property": "boardingSpecialists",
+                        "max": 3
+                    }
+                ],
+                "hangarCapacity": 8,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 8,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 8,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [
+                    {
+						"name": "Brute Hunting Parties (1st Slot)",
+                        "unlockedBy": "Covenant Assault Commander",
+						"points": 5
+					},
+                    {
+						"name": "Brute Hunting Parties (2nd Slot)",
+                        "unlockedBy": "Covenant Assault Commander",
+						"points": 5
+					},
+                    {
+						"name": "Brute Hunting Parties (3rd Slot)",
+                        "unlockedBy": "Covenant Assault Commander",
+						"points": 5
+					},
+                    {
+						"name": "Elite Zealots (1st Slot)",
+                        "unlockedBy": "Covenant Assault Commander",
+						"points": 10
+					},
+                    {
+						"name": "Elite Zealots (2nd Slot)",
+                        "unlockedBy": "Covenant Assault Commander",
+						"points": 10
+					},
+                    {
+						"name": "Elite Zealots (3rd Slot)",
+                        "unlockedBy": "Covenant Assault Commander",
+						"points": 10
+					},
+                    {
+						"name": "Hunter Assault Cadres (1st Slot)",
+                        "unlockedBy": "Covenant Assault Commander",
+						"points": 20
+					},
+                    {
+						"name": "Hunter Assault Cadres (2nd Slot)",
+                        "unlockedBy": "Covenant Assault Commander",
+						"points": 20
+					},
+                    {
+						"name": "Hunter Assault Cadres (3rd Slot)",
+                        "unlockedBy": "Covenant Assault Commander",
+						"points": 20
+					}
+                
+                ],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dds-class%20carrier.png?raw=true"
 			},
 			{
@@ -2401,6 +2999,22 @@
                     "Maccabeus"
                 ],
 				"buildRating": 5,
+                "hangarCapacity": 9,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 9,
+						"points": 0
+					},
+                    {
+						"name": "Terrasque Bombers",
+						"increment": true,
+                        "max": 9,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/dds-class%20carrier%20(supported).png?raw=true"
 			},
             {
@@ -2417,7 +3031,28 @@
                 ],
                 "buildRating": 2,
                 "hangarCapacity": 3,
+                "limitChildren":[
+                    {
+                        "property": "hangars",
+                        "max": 3
+                    }
+                ],
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 0,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20eion%20light%20carrier.png?raw=true"
             },
             {
@@ -2434,7 +3069,22 @@
                 ],
                 "buildRating": 4,
                 "hangarCapacity": 4,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 0,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20supported%20eion%20light%20carrier.png?raw=true"
             },
             {
@@ -2451,7 +3101,22 @@
                 ],
                 "buildRating": 2,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 2,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser.png?raw=true"
             },
             {
@@ -2468,7 +3133,22 @@
                 ],
                 "buildRating": 3,
                 "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 2,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(supported).png?raw=true"
             },
             {
@@ -2485,7 +3165,22 @@
                 ],
                 "buildRating": 3,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 3,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(escorted).png?raw=true"
             },
             {
@@ -2503,7 +3198,22 @@
                 "autoAddOnly": true,
                 "buildRating": 3,
                 "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 2,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(reinforced).png?raw=true"
             },
             {
@@ -2520,7 +3230,22 @@
                 ],
                 "buildRating": 4,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 3,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(defended).png?raw=true"
             },
             {
@@ -2537,7 +3262,22 @@
                 ],
                 "buildRating": 2,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 2,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser.png?raw=true"
             },
             {
@@ -2553,8 +3293,23 @@
                     "Preston Cole"
                 ],
                 "buildRating": 3,
-                "hangarCapacity": 2,
+                "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 2,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser%20(supported).png?raw=true"
             },
             {
@@ -2572,7 +3327,22 @@
                 "autoAddOnly": true,
                 "buildRating": 4,
                 "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 2,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser%20(reinforced).png?raw=true"
             },
             {
@@ -2590,7 +3360,22 @@
                 "autoAddOnly": true,
                 "buildRating": 6,
                 "hangarCapacity": 4,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 4,
+                "boardingSpecialists": [],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser%20(paired).png?raw=true"
             },
             {
@@ -2607,7 +3392,31 @@
                 ],
                 "buildRating": 2,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 2,
+                "boardingSpecialists": [
+                    {
+						"name": "ODST Strike Teams (1st Slot)",
+						"points": 5
+					},
+                    {
+						"name": "ODST Strike Teams (2nd Slot)",
+						"points": 5
+					}
+                ],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/autumn%20heavy%20cruiser.png?raw=true",
                 "specialRules":[
                     "Advanced Targeting",
@@ -2628,7 +3437,35 @@
                 ],
                 "buildRating": 3,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 3,
+                "boardingSpecialists": [
+                    {
+						"name": "ODST Strike Teams (1st Slot)",
+						"points": 5
+					},
+                    {
+						"name": "ODST Strike Teams (2nd Slot)",
+						"points": 5
+					},
+                    {
+						"name": "ODST Strike Teams (3rd Slot)",
+						"points": 5
+					}
+                ],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/autumn%20heavy%20cruiser%20(escorted).png?raw=true",
                 "specialRules":[
                     "Advanced Targeting",
@@ -2649,7 +3486,22 @@
                 ],
                 "buildRating": 2,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser.png?raw=true"
 			},
 			{
@@ -2666,7 +3518,22 @@
                 ],
                 "buildRating": 3,
                 "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 2,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser%20(supported).png?raw=true"
 			},
 			{
@@ -2683,7 +3550,22 @@
                 ],
                 "buildRating": 3,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser%20(escorted).png?raw=true"
 			},
 			{
@@ -2700,7 +3582,22 @@
                 ],
                 "buildRating": 3,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser%20(defended).png?raw=true"
 			},
 			{
@@ -2717,7 +3614,22 @@
                 ],
                 "buildRating": 3,
                 "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier.png?raw=true"
 			},
 			{
@@ -2734,7 +3646,22 @@
                 ],
                 "buildRating": 4,
                 "hangarCapacity": 4,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(supported).png?raw=true"
 			},
 			{
@@ -2751,7 +3678,22 @@
                 ],
                 "buildRating": 4,
                 "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 5,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(escorted).png?raw=true"
 			},
 			{
@@ -2768,7 +3710,22 @@
                 ],
                 "buildRating": 4,
                 "hangarCapacity": 4,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(reinforced).png?raw=true"
 			},
 			{
@@ -2785,7 +3742,22 @@
                 ],
                 "buildRating": 4,
                 "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 5,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(defended).png?raw=true"
 			},
 			{
@@ -2803,7 +3775,22 @@
                 "autoAddOnly": true,
                 "buildRating": 3,
                 "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(combat).png?raw=true"
 			},
 			{
@@ -2820,7 +3807,22 @@
                 ],
                 "buildRating": 4,
                 "hangarCapacity": 6,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 6,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 6,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/epoch%20heavy%20carrier.png?raw=true"
 			},
 			{
@@ -2837,7 +3839,22 @@
                 ],
                 "buildRating": 5,
                 "hangarCapacity": 7,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 7,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 7,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 3,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/epoch%20heavy%20carrier%20(supported).png?raw=true"
 			},
 			{
@@ -2854,7 +3871,22 @@
                 ],
                 "buildRating": 5,
                 "hangarCapacity": 6,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 6,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 6,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 4,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/epoch%20heavy%20carrier%20(defended).png?raw=true"
 			},
 			{
@@ -2871,7 +3903,22 @@
                 ],
                 "buildRating": 4,
                 "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 6,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/phoenix-class%20colonial%20support%20vessel.png?raw=true",
                 "specialRules":[
                     "Operational Support"
@@ -2892,7 +3939,22 @@
                 "autoAddOnly": true,
                 "buildRating": 6,
                 "hangarCapacity": 5,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 5,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 5,
+						"points": 0
+					}
+                ],
                 "boardingCraft": 7,
+                "boardingSpecialists": [],
 				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20phoenix%20(guardian%20spirit%20formation).png?raw=true",
                 "specialRules":[
                     "Operational Support"
@@ -2903,6 +3965,7 @@
             {
                 "name": "Seraph Interceptors",
                 "points": 0,
+                "increment": true,
                 "factions": [
                     "Covenant Assault Commander",
                     "Covenant Fleet Commander",
@@ -2911,12 +3974,55 @@
                     "Xytan 'Jar Wattinree",
                     "Rho 'Barutamee",
                     "Maccabeus"
-                ],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
+                ]
             },
             {
                 "name": "Terrasque Bombers",
                 "points": 0,
+                "increment": true,
+                "factions": [
+                    "Covenant Assault Commander",
+                    "Covenant Fleet Commander",
+                    "Covenant Gunnery Commander",
+                    "Covenant Wing Commander",
+                    "Xytan 'Jar Wattinree",
+                    "Rho 'Barutamee",
+                    "Maccabeus"
+                ]
+            },
+            {
+                "name": "Broadsword Interceptors",
+                "points": 0,
+                "increment": true,
+                "factions": [
+                    "UNSC Assault Commander",
+                    "UNSC Fleet Commander",
+                    "UNSC Gunnery Commander",
+                    "UNSC Wing Commander",
+                    "Michael Stanforth",
+                    "Lord Hood",
+                    "Preston Cole"
+                ]
+            },
+            {
+                "name": "Longsword Bombers",
+                "points": 0,
+                "increment": true,
+                "factions": [
+                    "UNSC Assault Commander",
+                    "UNSC Fleet Commander",
+                    "UNSC Gunnery Commander",
+                    "UNSC Wing Commander",
+                    "Michael Stanforth",
+                    "Lord Hood",
+                    "Preston Cole"
+                ]
+            }
+        ],
+        "boardingSpecialists": [
+            {
+                "name": "Brute Hunting Parties",
+                "points": 5,
                 "factions": [
                     "Covenant Assault Commander",
                     "Covenant Fleet Commander",
@@ -2928,36 +4034,6 @@
                 ],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
             },
-            {
-                "name": "Broadsword Interceptors",
-                "points": 0,
-                "factions": [
-                    "UNSC Assault Commander",
-                    "UNSC Fleet Commander",
-                    "UNSC Gunnery Commander",
-                    "UNSC Wing Commander",
-                    "Michael Stanforth",
-                    "Lord Hood",
-                    "Preston Cole"
-                ],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
-            },
-            {
-                "name": "Longsword Bombers",
-                "points": 0,
-                "factions": [
-                    "UNSC Assault Commander",
-                    "UNSC Fleet Commander",
-                    "UNSC Gunnery Commander",
-                    "UNSC Wing Commander",
-                    "Michael Stanforth",
-                    "Lord Hood",
-                    "Preston Cole"
-                ],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
-            }
-        ],
-        "boardingSpecialists": [
             {
                 "name": "Elite Zealots",
                 "points": 10,
@@ -2973,8 +4049,36 @@
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
             },
             {
+                "name": "Hunter Assault Cadres",
+                "points": 20,
+                "factions": [
+                    "Covenant Assault Commander",
+                    "Covenant Fleet Commander",
+                    "Covenant Gunnery Commander",
+                    "Covenant Wing Commander",
+                    "Xytan 'Jar Wattinree",
+                    "Rho 'Barutamee",
+                    "Maccabeus"
+                ],
+                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
+            },
+            {
                 "name": "Spartan-III Team",
                 "points": 40,
+                "factions": [
+                    "UNSC Assault Commander",
+                    "UNSC Fleet Commander",
+                    "UNSC Gunnery Commander",
+                    "UNSC Wing Commander",
+                    "Michael Stanforth",
+                    "Lord Hood",
+                    "Preston Cole"
+                ],
+                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
+            },
+            {
+                "name": "ODST Strike Teams",
+                "points": 5,
                 "factions": [
                     "UNSC Assault Commander",
                     "UNSC Fleet Commander",
@@ -3025,10 +4129,6 @@
 				"definition": "This Element counts as having the Assault Specialist (1) Loadout while defending during the Boarding Resolution Phase."
 			},
 			{
-				"name": "Hidden Killer (Blockade Runner)",
-				"definition": "Any Ranged Attack made against this Vessel from more than 20” away suffers further -1 to its Firepower Rating."
-			},
-			{
 				"name": "Hidden Killer",
 				"definition": "All Elements in this Battle Group may re-roll any Initial Rolls of a Skull when firing Plasma Torpedoes at Short Range."
 			},
@@ -3039,22 +4139,6 @@
 			{
 				"name": "Hunter Assault Cadres",
 				"definition": "All Elements in this Battle Group may re-roll any Initial Rolls of a Skull when firing Plasma Torpedoes at Short Range."
-			},
-			{
-				"name": "Fire at Will!",
-				"definition": "When executing the Increased Wirepower order, add +4 Attack Dice to the firing solution instead of +2"
-			},
-			{
-				"name": "Strength in Numbers!",
-				"definition": "Add 2 to your Faction's Wing Size Limits"
-			},
-			{
-				"name": "Brilliant Strategy!",
-				"definition": "When rolling the Order Dice during the Order Dice Phase, you may reroll 1 Order Dice. The second result must be kept.\n        When you spend an Order Dice on an order, roll a regular D6 after resolving the order; on a 5 or 6 do not remove the Order Dice from your Data Sheet."
-			},
-			{
-				"name": "Take it to Them!",
-				"definition": "You may reroll your D6 when involved in boarding action. As well, you may purchase special boarding craft as follows:\n        -Any UNSC Element may have any number of its Pelican Boarding Craft replaced with ODST Strike Teams for a total of +10 points per Team."
 			},
 			{
 				"name": "Wall of Fire",
@@ -3120,7 +4204,7 @@
         "standardOrders": [
             {
                 "name": "\"Increase Firepower!\"",
-                "definition": "Apend 1 Attack Order die. An Element may increase the number of Attack Dice rolled in a Secondary Weaponry Attack by +2. This Order must be rolled prior to any Initial Dice Roll."
+                "definition": "Spend 1 Attack Order die. An Element may increase the number of Attack Dice rolled in a Secondary Weaponry Attack by +2. This Order must be rolled prior to any Initial Dice Roll."
             },
             {
                 "name": "\"Enhance Fire Control\"",
@@ -3245,6 +4329,10 @@
             {
                 "name": "Rho 'Barutamee is a skilled military leader and an excellent tactician.",
                 "definition": "He can therefore choose to re-roll the Initiative Dice each turn, but the second result MUST be accepted."
+            },
+            {
+                "name": "Brutes",
+                "definition": "Replace ALL regular Boarding Tokens with Brute Hunting Parties Boarding Tokens. This is free, and their destruction does not award your opponent VPs."
             },
             {
                 "name": "Blind Devotion",
