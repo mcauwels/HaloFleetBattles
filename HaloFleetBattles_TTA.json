@@ -85,7 +85,7 @@
                         {
                             "name": "Standard",
                             "maximumChildren": {
-                                "smallShips": 5,
+                                "smallShips": 4,
                                 "capitalShips": 2,
                                 "boardingSpecialists": 0
                             },
@@ -787,6 +787,7 @@
                     {
                         "name": "DSC Support Ship",
                         "quantity": 3,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
                 ],
@@ -836,6 +837,7 @@
                     {
                         "name": "CCS Battlecruisers (Paired)",
                         "quantity": 1,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
                 ],
@@ -887,6 +889,7 @@
                     {
                         "name": "RCS Armored Cruisers (Paired)",
                         "quantity": 1,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
                 ],
@@ -938,6 +941,7 @@
                     {
                         "name": "CPV Heavy Destroyer (Defended)",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
                 ],
@@ -987,6 +991,7 @@
                     {
                         "name": "SDV Heavy Corvette (Tri-Formation)",
                         "quantity": 3,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     }
                 ],
@@ -1042,11 +1047,13 @@
                     {
                         "name": "CCS Battlecruiser (Reinforced)",
                         "quantity": 1,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     },
                     {
                         "name": "SDV Heavy Corvette (Line Formation)",
                         "quantity": 1,
+                        "points": 0,
                         "elementPropertyName": "smallShip"
                     }
                 ],
@@ -1102,11 +1109,13 @@
                     {
                         "name": "ORS Heavy Cruiser",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     },
                     {
                         "name": "SDV Heavy Corvette (Line Formation)",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     }
                 ],
@@ -1160,11 +1169,13 @@
                     {
                         "name": "CCS Battlecruiser",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     },
                     {
                         "name": "SDV Heavy Corvette (Line Formation)",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     }
                 ],
@@ -1218,11 +1229,13 @@
                     {
                         "name": "SDV Heavy Corvette (Line Formation)",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     },
                     {
                         "name": "SDV Heavy Corvette (Oblique Formation)",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     }
                 ],
@@ -1276,11 +1289,13 @@
                     {
                         "name": "CCS Battlecruiser (Supported)",
                         "quantity": 1,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     },
                     {
                         "name": "ORS Heavy Cruiser (Supported)",
                         "quantity": 1,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
                 ],
@@ -1331,6 +1346,7 @@
                     {
                         "name": "Marathon-Class Heavy Cruiser (Reinforced)",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
                 ],
@@ -1382,6 +1398,7 @@
                 "requiredChildren": [
                     {
                         "name": "Marathon-Class Heavy Cruiser (Paired)",
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
                 ],
@@ -1433,6 +1450,7 @@
                     {
                         "name": "Halcyon-Class Light Cruiser (Reinforced)",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
                 ],
@@ -1548,11 +1566,13 @@
                     {
                         "name": "Marathon-Class Heavy Cruiser (Supported)",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     },
                     {
                         "name": "Paris-Class Heavy Frigates (Trident Formation)",
                         "quantity": 2,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     }
                 ],
@@ -1658,11 +1678,13 @@
                     {
                         "name": "Paris-Class Heavy Frigates (Arrowhead Formation)",
                         "quantity": 3,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     },
                     {
                         "name": "Paris-Class Heavy Frigates (Trident Formation)",
                         "quantity": 3,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     }
                 ],
@@ -1765,6 +1787,7 @@
                     {
                         "name": "Paris-Class Heavy Frigates (Shield Formation)",
                         "quantity": 3,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     }
                 ],
@@ -1817,6 +1840,7 @@
                     {
                         "name": "Halberd-Class Destroyers (Axe Formation)",
                         "quantity": 3,
+                        "points": 0,
                         "elementPropertyName": "smallShips"
                     }
                 ],
