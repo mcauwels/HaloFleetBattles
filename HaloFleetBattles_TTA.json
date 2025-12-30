@@ -660,7 +660,7 @@
                 "limitChildren":[
                     "boardingSpecialist"
                 ],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20assault%20commander.png?raw=true",
+                "imageUrl": "http://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/GenericCommanderCards/AssaultCommander.png?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -673,7 +673,7 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20fleet%20commander.png?raw=true",
+                "imageUrl": "http://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/GenericCommanderCards/FleetCommander.png?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -686,7 +686,7 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20gunnery%20commander.png?raw=true",
+                "imageUrl": "http://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/GenericCommanderCards/GunneryCommander.png?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -699,20 +699,7 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20wing%20commander.png?raw=true",
-                "imageOrientation": "portrait"
-            },
-            {
-                "name": "Covenant Fleet Commander Stats",
-                "points": 50,
-                "factions": [
-                    {
-                        "name": "Covenant Fleet Commander",
-                        "heroicTier": "Commander Statistics"
-                    }
-                ],
-                "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20fleet%20commander.png?raw=true",
+                "imageUrl": "http://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/GenericCommanderCards/WingCommander.png?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -725,7 +712,20 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20assault%20commander.png?raw=true",
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/GenericCommanderCards/AssaultCommander.png?raw=true",
+                "imageOrientation": "portrait"
+            },
+            {
+                "name": "Covenant Fleet Commander Stats",
+                "points": 50,
+                "factions": [
+                    {
+                        "name": "Covenant Fleet Commander",
+                        "heroicTier": "Commander Statistics"
+                    }
+                ],
+                "autoAddOnly": true,
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/GenericCommanderCards/FleetCommander.png?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -738,7 +738,7 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20gunnery%20commander.png?raw=true",
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/GenericCommanderCards/GunneryCommander.png?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -751,7 +751,7 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20wing%20commander.png?raw=true",
+                "imageUrl": "http://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/GenericCommanderCards/WingCommander.png?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -5091,7 +5091,7 @@
         "uniqueAbilities": [
             {
                 "name": "\"Brilliant Strategy!\"",
-                "definition": "When spending a Command Order die, roll one Halo die. On a Hit result, keep the Command Order die. On a Critical result, swap the Command Order die to any face and keep it."
+                "definition": "When spending an Order die, roll one Halo die. On a 1/Success result, keep the Order die. On a 2/Critical Success, you may change the face of that Order die to any result and keep it. On a Miss or Skull, the Order is still executed but the Order die is discarded as normal."
             },
             {
                 "name": "\"Fire at Will!\"",
@@ -5103,7 +5103,7 @@
             },
             {
                 "name": "\"Time to Dance!\"",
-                "definition": "When you resolve the Boarding Victory table, roll 2 die instead of one. You may choose which result to take."
+                "definition": "When resolving either the Attacker or Defender Boarding Victory table, roll 2 dice instead of 1. You may choose which result to take."
             },
             {
                 "name": "The UNSC Assault Commander has acess to specialist boarding troops for purchase in their fleet.",
