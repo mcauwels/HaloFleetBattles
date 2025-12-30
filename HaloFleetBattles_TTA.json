@@ -93,21 +93,29 @@
                         },
                         {
                             "name": "Specialist",
+                            "rank": 2
+                        },
+                        {
+                            "name": "Massive",
                             "maximumChildren": {
                                 "smallShips": 0,
                                 "capitalShips": 0,
                                 "boardingSpecialists": 0
                             },
-                            "rank": 2
+                            "rank": 3
                         },
                         {
-                            "name": "Commander",
+                            "name": "Emplacement",
                             "maximumChildren": {
                                 "smallShips": 0,
                                 "capitalShips": 0,
-                                "boardingSpecialists": 1
+                                "boardingSpecialists": 0
                             },
-                            "rank": 3
+                            "rank": 4
+                        },
+                        {
+                            "name": "Commander",
+                            "rank": 5
                         }
                     ],
                     "children": [
@@ -189,7 +197,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "UNSC Assault Commander",
+                        "name": "UNSC Assault Commander Stats",
                         "points": 50,
                         "elementPropertyName": "groups"
                     }
@@ -208,7 +216,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "UNSC Fleet Commander",
+                        "name": "UNSC Fleet Commander Stats",
                         "points": 50,
                         "elementPropertyName": "groups"
                     }
@@ -227,7 +235,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "UNSC Gunnery Commander",
+                        "name": "UNSC Gunnery Commander Stats",
                         "points": 50,
                         "elementPropertyName": "groups"
                     }
@@ -246,7 +254,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "UNSC Wing Commander",
+                        "name": "UNSC Wing Commander Stats",
                         "points": 50,
                         "elementPropertyName": "groups"
                     }
@@ -266,7 +274,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Covenant Assault Commander",
+                        "name": "Covenant Assault Commander Stats",
                         "points": 50,
                         "elementPropertyName": "groups"
                     }
@@ -285,7 +293,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Covenant Fleet Commander",
+                        "name": "Covenant Fleet Commander Stats",
                         "points": 50,
                         "elementPropertyName": "groups"
                     }
@@ -304,7 +312,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Covenant Gunnery Commander",
+                        "name": "Covenant Gunnery Commander Stats",
                         "points": 50,
                         "elementPropertyName": "groups"
                     }
@@ -323,7 +331,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Covenant Wing Commander",
+                        "name": "Covenant Wing Commander Stats",
                         "points": 50,
                         "elementPropertyName": "groups"
                     }
@@ -346,7 +354,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Lord Hood",
+                        "name": "Lord Hood Stats",
                         "points": 120,
                         "elementPropertyName": "groups"
                     }
@@ -369,7 +377,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Michael Stanforth",
+                        "name": "Michael Stanforth Stats",
                         "points": 100,
                         "elementPropertyName": "groups"
                     }
@@ -391,7 +399,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Preston Cole",
+                        "name": "Preston Cole Stats",
                         "points": 140,
                         "elementPropertyName": "groups"
                     }
@@ -414,7 +422,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Xytan 'Jar Wattinree",
+                        "name": "Xytan 'Jar Wattinree Stats",
                         "points": 120,
                         "elementPropertyName": "groups"
                     }
@@ -437,7 +445,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Rho 'Barutamee",
+                        "name": "Rho 'Barutamee Stats",
                         "points": 100,
                         "elementPropertyName": "groups"
                     }
@@ -462,7 +470,7 @@
                 ],
                 "requiredChildren": [
                     {
-                        "name": "Maccabeus",
+                        "name": "Maccabeus Stats",
                         "points": 80,
                         "elementPropertyName": "groups"
                     }
@@ -475,6 +483,12 @@
             },
             {
                 "name": "Specalist"
+            },
+            {
+                "name": "Massive"
+            },
+            {
+                "name": "Emplacement"
             },
             {
                 "name": "Commander"
@@ -546,7 +560,7 @@
                 "unlimited": true
             },
             {
-                "name": "UNSC Assault Commander",
+                "name": "UNSC Assault Commander Stats",
                 "points": 50,
                 "factions": [
                     {
@@ -562,7 +576,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "UNSC Fleet Commander",
+                "name": "UNSC Fleet Commander Stats",
                 "points": 50,
                 "factions": [
                     {
@@ -575,7 +589,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "UNSC Gunnery Commander",
+                "name": "UNSC Gunnery Commander Stats",
                 "points": 50,
                 "factions": [
                     {
@@ -588,7 +602,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "UNSC Wing Commander",
+                "name": "UNSC Wing Commander Stats",
                 "points": 50,
                 "factions": [
                     {
@@ -601,7 +615,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Covenant Fleet Commander",
+                "name": "Covenant Fleet Commander Stats",
                 "points": 50,
                 "factions": [
                     {
@@ -614,7 +628,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Covenant Assault Commander",
+                "name": "Covenant Assault Commander Stats",
                 "points": 50,
                 "factions": [
                     {
@@ -627,7 +641,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Covenant Gunnery Commander",
+                "name": "Covenant Gunnery Commander Stats",
                 "points": 50,
                 "factions": [
                     {
@@ -640,7 +654,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Covenant Wing Commander",
+                "name": "Covenant Wing Commander Stats",
                 "points": 50,
                 "factions": [
                     {
@@ -653,7 +667,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Michael Stanforth",
+                "name": "Michael Stanforth Stats",
                 "points": 100,
                 "factions": [
                     {
@@ -666,7 +680,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Lord Hood",
+                "name": "Lord Hood Stats",
                 "points": 120,
                 "factions": [
                     {
@@ -679,7 +693,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Preston Cole",
+                "name": "Preston Cole Stats",
                 "points": 140,
                 "factions": [
                     {
@@ -692,7 +706,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Xytan 'Jar Wattinree",
+                "name": "Xytan 'Jar Wattinree Stats",
                 "points": 120,
                 "factions": [
                     {
@@ -705,7 +719,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Rho 'Barutamee",
+                "name": "Rho 'Barutamee Stats",
                 "points": 100,
                 "factions": [
                     {
@@ -718,7 +732,7 @@
                 "imageOrientation": "portrait"
             },
             {
-                "name": "Maccabeus",
+                "name": "Maccabeus Stats",
                 "points": 80,
                 "factions": [
                     {
@@ -1274,7 +1288,7 @@
                 "specialRules": []
             },
             {
-                "name": "Barrage",
+                "name": "Barrage Battle Group",
                 "points": 270,
                 "factions": [
                     {
@@ -1326,7 +1340,7 @@
                 ]
             },
             {
-                "name": "Cerberus",
+                "name": "Cerberus Battle Group",
                 "points": 200,
                 "factions": [
                     {
@@ -1377,7 +1391,7 @@
                 ]
             },
             {
-                "name": "Chimera",
+                "name": "Chimera Battle Group",
                 "points": 220,
                 "factions": [
                     {
@@ -1656,7 +1670,7 @@
                 "specialRules": []
             },
             {
-                "name": "Orthus",
+                "name": "Orthus Battle Group",
                 "points": 350,
                 "factions": [
                     {
@@ -1708,7 +1722,7 @@
                 ]
             },
             {
-                "name": "Shield Wall",
+                "name": "Shield Wall Battle Group",
                 "points": 120,
                 "factions": [
                     {
@@ -1966,6 +1980,71 @@
                 "hangars": [],
                 "boardingCraft": 1,
                 "boardingSpecialists": [],
+                "availableIn": [
+                    {
+						"all": [
+							{
+								"in": "UNSC Fleet Commander"
+							},
+							{
+								"with": "Standard Battle Group"
+							}
+						]
+					}
+                ],
+                "unavailableIn": [
+					[
+						"UNSC Assault Commander Stats"
+					],
+                    [
+						"UNSC Fleet Commander Stats"
+					],
+                    [
+						"UNSC Gunnery Commander Stats"
+					],
+                    [
+						"UNSC Wing Commander Stats"
+					],
+                    [
+						"Lord Hood Stats"
+					],
+                    [
+						"Preston Cole Stats"
+					],
+                    [
+						"Michael Stanforth Stats"
+					],
+                    [
+						"Barrage Battle Group"
+					],
+                    [
+						"Cerberus Battle Group"
+					],
+                    [
+						"Chimera Spirit Battle Group"
+					],
+                    [
+						"Cyclops Pack Battle Group"
+					],
+                    [
+						"Gorgon Battle Group"
+					],
+                    [
+						"Guardian Spirit Battle Group"
+					],
+                    [
+						"Harpy Pack Battle Group"
+					],
+                    [
+						"Orthus Battle Group"
+					],
+                    [
+						"Shield Wall Battle Group"
+					],
+                    [
+						"Wolf Pack Battle Group"
+					]                  
+				],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halberd%20destroyers%20(axe%20formation).png?raw=true"
             },
             {
@@ -1985,6 +2064,72 @@
                 "hangars": [],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
+                "availableIn": [
+                    {
+						"all": [
+							{
+								"in": "UNSC Fleet Commander"
+							},
+							{
+								"with": "Standard Battle Group"
+							}
+						]
+					}
+                ],
+                "unavailableIn": [
+					[
+						"UNSC Assault Commander Stats"
+					],
+                    [
+						"UNSC Fleet Commander Stats"
+					],
+                    [
+						"UNSC Gunnery Commander Stats"
+					],
+                    [
+						"UNSC Wing Commander Stats"
+					],
+                    [
+						"Lord Hood Stats"
+					],
+                    [
+						"Preston Cole Stats"
+					],
+                    [
+						"Michael Stanforth Stats"
+					],
+                    [
+						"Barrage Battle Group"
+					],
+                    [
+						"Cerberus Battle Group"
+					],
+                    [
+						"Chimera Spirit Battle Group"
+					],
+                    [
+						"Cyclops Pack Battle Group"
+					],
+                    [
+						"Gorgon Battle Group"
+					],
+                    [
+						"Guardian Spirit Battle Group"
+					],
+                    [
+						"Harpy Pack Battle Group"
+					],
+                    [
+						"Orthus Battle Group"
+					],
+                    [
+						"Shield Wall Battle Group"
+					],
+                    [
+						"Wolf Pack Battle Group"
+					]
+                    
+				],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(arrowhead).png?raw=true"
             },
             {
@@ -2005,6 +2150,69 @@
                 "hangars": [],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
+                "availableIn": [
+                    {
+						"all": [
+							{
+								"in": "UNSC Fleet Commander"
+							},
+							{
+								"with": "Shield Wall Battle Group"
+							}
+						]
+					}
+                ],
+                "unavailableIn": [
+					[
+						"UNSC Assault Commander Stats"
+					],
+                    [
+						"UNSC Fleet Commander Stats"
+					],
+                    [
+						"UNSC Gunnery Commander Stats"
+					],
+                    [
+						"UNSC Wing Commander Stats"
+					],
+                    [
+						"Lord Hood Stats"
+					],
+                    [
+						"Preston Cole Stats"
+					],
+                    [
+						"Michael Stanforth Stats"
+					],
+                    [
+						"Barrage Battle Group"
+					],
+                    [
+						"Cerberus Battle Group"
+					],
+                    [
+						"Chimera Spirit Battle Group"
+					],
+                    [
+						"Cyclops Pack Battle Group"
+					],
+                    [
+						"Gorgon Battle Group"
+					],
+                    [
+						"Guardian Spirit Battle Group"
+					],
+                    [
+						"Harpy Pack Battle Group"
+					],
+                    [
+						"Orthus Battle Group"
+					],
+                    [
+						"Wolf Pack Battle Group"
+					]
+                    
+				],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(shield%20formation).png?raw=true"
             },
             {
@@ -2024,6 +2232,72 @@
                 "hangars": [],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
+                "availableIn": [
+                    {
+						"all": [
+							{
+								"in": "UNSC Fleet Commander"
+							},
+							{
+								"with": "Standard Battle Group"
+							}
+						]
+					}
+                ],
+                "unavailableIn": [
+					[
+						"UNSC Assault Commander Stats"
+					],
+                    [
+						"UNSC Fleet Commander Stats"
+					],
+                    [
+						"UNSC Gunnery Commander Stats"
+					],
+                    [
+						"UNSC Wing Commander Stats"
+					],
+                    [
+						"Lord Hood Stats"
+					],
+                    [
+						"Preston Cole Stats"
+					],
+                    [
+						"Michael Stanforth Stats"
+					],
+                    [
+						"Barrage Battle Group"
+					],
+                    [
+						"Cerberus Battle Group"
+					],
+                    [
+						"Chimera Spirit Battle Group"
+					],
+                    [
+						"Cyclops Pack Battle Group"
+					],
+                    [
+						"Gorgon Battle Group"
+					],
+                    [
+						"Guardian Spirit Battle Group"
+					],
+                    [
+						"Harpy Pack Battle Group"
+					],
+                    [
+						"Orthus Battle Group"
+					],
+                    [
+						"Shield Wall Battle Group"
+					],
+                    [
+						"Wolf Pack Battle Group"
+					]
+                    
+				],
                 "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(trident%20formation).png?raw=true"
             }
         ],
