@@ -27,7 +27,7 @@
     "stats": [],
     "dataTableKeys": [
         "groups",
-        "smallShips",
+        "nonCapitalShips",
         "capitalShips",
         "fighters",
         "boardingSpecialists"
@@ -83,47 +83,57 @@
                     "childStatMax": 6,
                     "tiers": [
                         {
-                            "name": "Standard",
+                            "name": "Standard Battle Groups",
                             "maximumChildren": {
-                                "smallShips": 4,
+                                "nonCapitalShips": 4,
                                 "capitalShips": 2,
                                 "boardingSpecialists": 0
                             },
                             "rank": 1
                         },
                         {
-                            "name": "Specialist",
+                            "name": "Specialist Battle Groups",
+                            "maximumChildren": {
+                                "nonCapitalShips": 0,
+                                "capitalShips": 0,
+                                "boardingSpecialists": 0
+                            },
                             "rank": 2
                         },
                         {
-                            "name": "Massive",
+                            "name": "Massive Elements",
                             "maximumChildren": {
-                                "smallShips": 0,
+                                "nonCapitalShips": 0,
                                 "capitalShips": 0,
                                 "boardingSpecialists": 0
                             },
                             "rank": 3
                         },
                         {
-                            "name": "Emplacement",
+                            "name": "Emplacement Elements",
                             "maximumChildren": {
-                                "smallShips": 0,
+                                "nonCapitalShips": 0,
                                 "capitalShips": 0,
                                 "boardingSpecialists": 0
                             },
                             "rank": 4
                         },
                         {
-                            "name": "Commander",
+                            "name": "Commander Statistics",
+                            "maximumChildren": {
+                                "nonCapitalShips": 0,
+                                "capitalShips": 0,
+                                "boardingSpecialists": 1
+                            },
                             "rank": 5
                         }
                     ],
                     "children": [
                         {
-                            "singleKey": "smallShip",
-                            "dataSource": "smallShips",
-                            "propertyName": "smallShips",
-                            "label": "Small Ship",
+                            "singleKey": "nonCapitalShip",
+                            "dataSource": "nonCapitalShips",
+                            "propertyName": "nonCapitalShips",
+                            "label": "Non-Capital Ship",
                             "type": "list",
                             "children":[
                                 {
@@ -479,19 +489,19 @@
         ],
         "heroicTiers": [
             {
-                "name": "Standard"
+                "name": "Standard Battle Groups"
             },
             {
-                "name": "Specalist"
+                "name": "Specialist Battle Groups"
             },
             {
-                "name": "Massive"
+                "name": "Massive Elements"
             },
             {
-                "name": "Emplacement"
+                "name": "Emplacement Elements"
             },
             {
-                "name": "Commander"
+                "name": "Commander Statistics"
             }
         ],
         "groups": [
@@ -501,63 +511,66 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Standard"
+                        "heroicTier": "Standard Battle Groups"
                     }
                 ],
                 "decreaseModelCount": 1,
-                "unlimited": true
+                "unlimited": true,
+                "specialRules": [
+                    "Battle Groups"
+                ]
             },
             {
                 "name": "UNSC Assault Commander Stats",
@@ -565,7 +578,7 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -581,7 +594,7 @@
                 "factions": [
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -594,7 +607,7 @@
                 "factions": [
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -607,7 +620,7 @@
                 "factions": [
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -620,7 +633,7 @@
                 "factions": [
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -633,7 +646,7 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -646,7 +659,7 @@
                 "factions": [
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -659,7 +672,7 @@
                 "factions": [
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -672,7 +685,7 @@
                 "factions": [
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -685,7 +698,7 @@
                 "factions": [
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -698,7 +711,7 @@
                 "factions": [
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -711,7 +724,7 @@
                 "factions": [
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -724,7 +737,7 @@
                 "factions": [
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -737,7 +750,7 @@
                 "factions": [
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Commander"
+                        "heroicTier": "Commander Statistics"
                     }
                 ],
                 "autoAddOnly": true,
@@ -750,31 +763,31 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -800,31 +813,31 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -852,31 +865,31 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -904,31 +917,31 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -954,36 +967,36 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "SDV Heavy Corvette (Tri-Formation)"
                     }
                 ],
@@ -992,7 +1005,7 @@
                         "name": "SDV Heavy Corvette (Tri-Formation)",
                         "quantity": 3,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     }
                 ],
                 "decreaseModelCount": 6,
@@ -1006,31 +1019,31 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1039,7 +1052,7 @@
                         "name": "CCS Battlecruiser (Reinforced)"
                     },
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "SDV Heavy Corvette (Line Formation)"
                     }
                 ],
@@ -1054,7 +1067,7 @@
                         "name": "SDV Heavy Corvette (Line Formation)",
                         "quantity": 1,
                         "points": 0,
-                        "elementPropertyName": "smallShip"
+                        "elementPropertyName": "nonCapitalShip"
                     }
                 ],
                 "decreaseModelCount": 6,
@@ -1068,31 +1081,31 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1101,7 +1114,7 @@
                         "name": "ORS Heavy Cruiser"
                     },
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "SDV Heavy Corvette (Line Formation)"
                     }
                 ],
@@ -1116,7 +1129,7 @@
                         "name": "SDV Heavy Corvette (Line Formation)",
                         "quantity": 2,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     }
                 ],
                 "decreaseModelCount": 6,
@@ -1128,31 +1141,31 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1161,7 +1174,7 @@
                         "name": "CCS Battlecruiser"
                     },
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "SDV Heavy Corvette (Line Formation)"
                     }
                 ],
@@ -1176,7 +1189,7 @@
                         "name": "SDV Heavy Corvette (Line Formation)",
                         "quantity": 2,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     }
                 ],
                 "decreaseModelCount": 8,
@@ -1188,40 +1201,40 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "SDV Heavy Corvette (Line Formation)"
                     },
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "SDV Heavy Corvette (Oblique Formation)"
                     }
                 ],
@@ -1230,13 +1243,13 @@
                         "name": "SDV Heavy Corvette (Line Formation)",
                         "quantity": 2,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     },
                     {
                         "name": "SDV Heavy Corvette (Oblique Formation)",
                         "quantity": 2,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     }
                 ],
                 "decreaseModelCount": 4,
@@ -1248,31 +1261,31 @@
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Covenant Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Xytan 'Jar Wattinree",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Rho 'Barutamee",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Maccabeus",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1308,31 +1321,31 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1361,31 +1374,31 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1413,31 +1426,31 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1465,31 +1478,31 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1498,7 +1511,7 @@
                         "name": "Marathon-Class Heavy Cruiser (Supported)"
                     },
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "Paris-Class Heavy Frigates (Trident Formation)"
                     }
                 ],
@@ -1506,12 +1519,14 @@
                     {
                         "name": "Marathon-Class Heavy Cruiser (Supported)",
                         "quantity": 1,
+                        "points": 0,
                         "elementPropertyName": "capitalShips"
                     },
                     {
                         "name": "Paris-Class Heavy Frigates (Trident Formation)",
                         "quantity": 3,
-                        "elementPropertyName": "smallShips"
+                        "points": 0,
+                        "elementPropertyName": "nonCapitalShips"
                     }
                 ],
                 "decreaseModelCount": 4,
@@ -1525,31 +1540,31 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1558,7 +1573,7 @@
                         "name": "Marathon-Class Heavy Cruiser (Supported)"
                     },
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "Paris-Class Heavy Frigates (Trident Formation)"
                     }
                 ],
@@ -1573,7 +1588,7 @@
                         "name": "Paris-Class Heavy Frigates (Trident Formation)",
                         "quantity": 2,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     }
                 ],
                 "decreaseModelCount": 4,
@@ -1585,31 +1600,31 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1637,40 +1652,40 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "Paris-Class Heavy Frigates (Arrowhead Formation)"
                     },
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "Paris-Class Heavy Frigates (Trident Formation)"
                     }
                 ],
@@ -1679,13 +1694,13 @@
                         "name": "Paris-Class Heavy Frigates (Arrowhead Formation)",
                         "quantity": 3,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     },
                     {
                         "name": "Paris-Class Heavy Frigates (Trident Formation)",
                         "quantity": 3,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     }
                 ],
                 "decreaseModelCount": 6,
@@ -1697,31 +1712,31 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
@@ -1749,36 +1764,36 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "Paris-Class Heavy Frigates (Shield Formation)"
                     }
                 ],
@@ -1788,7 +1803,7 @@
                         "name": "Paris-Class Heavy Frigates (Shield Formation)",
                         "quantity": 3,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     }
                 ],
                 "decreaseModelCount": 6,
@@ -1802,36 +1817,36 @@
                 "factions": [
                     {
                         "name": "UNSC Assault Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Fleet Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Gunnery Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "UNSC Wing Commander",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Michael Stanforth",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Lord Hood",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     },
                     {
                         "name": "Preston Cole",
-                        "heroicTier": "Specalist"
+                        "heroicTier": "Specialist Battle Groups"
                     }
                 ],
                 "includes": [
                     {
-                        "dataSource": "smallShips",
+                        "dataSource": "nonCapitalShips",
                         "name": "Halberd-Class Destroyers (Axe Formation)"
                     }
                 ],
@@ -1841,14 +1856,14 @@
                         "name": "Halberd-Class Destroyers (Axe Formation)",
                         "quantity": 3,
                         "points": 0,
-                        "elementPropertyName": "smallShips"
+                        "elementPropertyName": "nonCapitalShips"
                     }
                 ],
                 "decreaseModelCount": 6,
                 "specialRules": []
             }
         ],
-        "smallShips": [
+        "nonCapitalShips": [
             {
 				"name": "ADP Escort (Tri-Formation)",
 				"points": 20,
@@ -2069,7 +2084,7 @@
 						"Wolf Pack Battle Group"
 					]                  
 				],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halberd%20destroyers%20(axe%20formation).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/HalberdDestroyers.jpg?raw=true"
             },
             {
                 "name": "Paris-Class Heavy Frigates (Arrowhead Formation)",
@@ -2154,7 +2169,7 @@
 					]
                     
 				],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(arrowhead).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ParisFrigatesArrowhead.jpg?raw=true"
             },
             {
                 "name": "Paris-Class Heavy Frigates (Shield Formation)",
@@ -2237,7 +2252,7 @@
 					]
                     
 				],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(shield%20formation).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ParisFrigatesShield.jpg?raw=true"
             },
             {
                 "name": "Paris-Class Heavy Frigates (Trident Formation)",
@@ -2322,7 +2337,7 @@
 					]
                     
 				],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/paris%20class%20frigates%20(trident%20formation).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ParisFrigatesTrident.jpg?raw=true"
             }
         ],
         "capitalShips": [
@@ -3351,7 +3366,7 @@
                 ],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20eion%20light%20carrier.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/EionLightCarrier.jpg?raw=true"
             },
             {
                 "name": "Eion-Class Light Carrier (Supported)",
@@ -3383,7 +3398,7 @@
                 ],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20supported%20eion%20light%20carrier.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/EionLightCarrierSupported.jpg?raw=true"
             },
             {
                 "name": "Halcyon-Class Light Cruiser",
@@ -3415,7 +3430,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/HalcyonLightCruiser.JPG?raw=true"
             },
             {
                 "name": "Halcyon-Class Light Cruiser (Supported)",
@@ -3447,7 +3462,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(supported).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/HalcyonLightCruiserSupported.jpg?raw=true"
             },
             {
                 "name": "Halcyon-Class Light Cruiser (Escorted)",
@@ -3479,7 +3494,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(escorted).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/HalcyonLightCruiserEscorted.JPG?raw=true"
             },
             {
                 "name": "Halcyon-Class Light Cruiser (Reinforced)",
@@ -3512,7 +3527,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(reinforced).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/HalcyonLightCruiserReinforced.jpg?raw=true"
             },
             {
                 "name": "Halcyon-Class Light Cruiser (Defended)",
@@ -3544,7 +3559,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/halcyon%20light%20cruiser%20(defended).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/HalcyonLightCruiserDefended.JPG?raw=true"
             },
             {
                 "name": "Marathon-Class Heavy Cruiser",
@@ -3576,7 +3591,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/MarathonHeavyCruiser.jpg?raw=true"
             },
             {
                 "name": "Marathon-Class Heavy Cruiser (Supported)",
@@ -3608,7 +3623,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser%20(supported).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/MarathonHeavyCruiserSupported.jpg?raw=true"
             },
             {
                 "name": "Marathon-Class Heavy Cruiser (Reinforced)",
@@ -3641,7 +3656,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser%20(reinforced).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/MarathonHeavyCruiserReinforced.jpg?raw=true"
             },
             {
                 "name": "Marathon-Class Heavy Cruiser (Paired)",
@@ -3674,7 +3689,7 @@
                 ],
                 "boardingCraft": 4,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/marathon%20heavy%20cruiser%20(paired).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/MarathonHeavyCruiserPaired.jpg?raw=true"
             },
             {
 				"name": "Autumn-Class Heavy Cruiser",
@@ -3715,7 +3730,7 @@
 						"points": 5
 					}
                 ],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/autumn%20heavy%20cruiser.png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/AutumnHeavyCruiser.jpg?raw=true",
                 "specialRules":[
                     "Advanced Targeting",
                     "ODST Strike Teams"
@@ -3764,7 +3779,7 @@
 						"points": 5
 					}
                 ],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/autumn%20heavy%20cruiser%20(escorted).png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/AutumnHeavyCruiserEscorted.jpg?raw=true",
                 "specialRules":[
                     "Advanced Targeting",
                     "ODST Strike Teams"
@@ -3800,7 +3815,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser.png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ValiantSuperHeavyCruiser.jpg?raw=true"
 			},
 			{
 				"name": "Valiant-Class Super-Heavy Cruiser (Supported)",
@@ -3832,7 +3847,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser%20(supported).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ValiantSuperHeavyCruiserSupported.jpg?raw=true"
 			},
 			{
 				"name": "Valiant-Class Super-Heavy Cruiser (Escorted)",
@@ -3864,7 +3879,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser%20(escorted).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ValiantSuperHeavyCruiserEscorted.jpg?raw=true"
 			},
 			{
 				"name": "Valiant-Class Super-Heavy Cruiser (Defended)",
@@ -3896,7 +3911,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/valiant%20super-heavy%20cruiser%20(defended).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ValiantSuperHeavyCruiserDefended.jpg?raw=true"
 			},
 			{
 				"name": "Orion-Class Assault Carrier",
@@ -3928,7 +3943,7 @@
                 ],
                 "boardingCraft": 4,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier.png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/OrionAssaultCarrier.jpg?raw=true"
 			},
 			{
 				"name": "Orion-Class Assault Carrier (Supported)",
@@ -3960,7 +3975,7 @@
                 ],
                 "boardingCraft": 4,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(supported).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/OrionAssaultCarrierSupported.jpg?raw=true"
 			},
 			{
 				"name": "Orion-Class Assault Carrier (Escorted)",
@@ -3992,7 +4007,7 @@
                 ],
                 "boardingCraft": 5,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(escorted).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/OrionAssaultCarrierEscorted.jpg?raw=true"
 			},
 			{
 				"name": "Orion-Class Assault Carrier (Reinforced)",
@@ -4024,7 +4039,7 @@
                 ],
                 "boardingCraft": 4,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(reinforced).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/OrionAssaultCarrierReinforced.jpg?raw=true"
 			},
 			{
 				"name": "Orion-Class Assault Carrier (Defended)",
@@ -4056,40 +4071,7 @@
                 ],
                 "boardingCraft": 5,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(defended).png?raw=true"
-			},
-			{
-				"name": "Orion-Class Assault Carrier (Combat)",
-				"points": 165,
-				"factions": [
-                    "UNSC Assault Commander",
-                    "UNSC Fleet Commander",
-                    "UNSC Gunnery Commander",
-                    "UNSC Wing Commander",
-                    "Michael Stanforth",
-                    "Lord Hood",
-                    "Preston Cole"
-                ],
-                "autoAddOnly": true,
-                "buildRating": 3,
-                "hangarCapacity": 2,
-                "hangars": [
-                    {
-						"name": "Broadsword Interceptors",
-						"increment": true,
-                        "max": 2,
-						"points": 0
-					},
-                    {
-						"name": "Longsword Bombers",
-						"increment": true,
-                        "max": 2,
-						"points": 0
-					}
-                ],
-                "boardingCraft": 3,
-                "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/orion%20assault%20carrier%20(combat).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/OrionAssaultCarrierDefended.jpg?raw=true"
 			},
 			{
 				"name": "Epoch-Class Heavy Carrier",
@@ -4121,7 +4103,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/epoch%20heavy%20carrier.png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/EpochHeavyCarrier.jpg?raw=true"
 			},
 			{
 				"name": "Epoch-Class Heavy Carrier (Supported)",
@@ -4153,7 +4135,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/epoch%20heavy%20carrier%20(supported).png?raw=true"
+				"imageUrl": "http://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/EpochHeavyCarrierSupported.jpg?raw=true"
 			},
 			{
 				"name": "Epoch-Class Heavy Carrier (Defended)",
@@ -4185,7 +4167,7 @@
                 ],
                 "boardingCraft": 4,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/epoch%20heavy%20carrier%20(defended).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/EpochHeavyCarrierDefended.jpg?raw=true"
 			},
 			{
 				"name": "Phoenix-Class Colonial Support Vessel",
@@ -4217,7 +4199,7 @@
                 ],
                 "boardingCraft": 6,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/phoenix-class%20colonial%20support%20vessel.png?raw=true",
+				"imageUrl": "http://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/PhoenixColonialSupportVessel.jpg?raw=true",
                 "specialRules":[
                     "Operational Support"
                 ]
@@ -4253,7 +4235,7 @@
                 ],
                 "boardingCraft": 7,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/unsc%20phoenix%20(guardian%20spirit%20formation).png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/PhoenixGuardianSpiritFormation.jpg?raw=true",
                 "specialRules":[
                     "Operational Support"
                 ]
@@ -4390,6 +4372,10 @@
             }
         ],
         "keywords": [
+            {
+                "name": "Battle Groups",
+                "definition": "Standard Battle Groups must adhere to three rules:\n1. They MUST contain at least 1 Capital Element.\n2. They MUST contain at least 1 Non-Capital Element.\n3. The combined Build Rating (BR) MUST NOT exceed BR 6 (see the Fleet Building chapter on page 22 of the Halo: Fleet Battles core rulebook)."
+            },
             {
 				"name": "Plasma Beam Overload",
 				"definition": "This Formation may choose to overload its Plasma Beam. This formation immediately gains a Vulnerable Marker and increases the Attack Dice of the Plasma Beam by +3 until the end of the Game Turn."
