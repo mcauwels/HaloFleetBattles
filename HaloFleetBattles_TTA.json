@@ -1015,7 +1015,7 @@
             },
             {
                 "name": "The Golden Path Battle Group",
-                "points": 300,
+                "points": 240,
                 "factions": [
                     {
                         "name": "Covenant Assault Commander",
@@ -1881,7 +1881,7 @@
                 "hangars": [],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/adp%20escort%20(tri-formation).png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/ADP-Escorts.JPG?raw=true",
 				"specialRules": [
 					"ADP Escorts"
 				]
@@ -1903,7 +1903,7 @@
                 "hangars": [],
                 "boardingCraft": 1,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/covenant%20car%20frigate%20(oblique).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CAR-Frigates.JPG?raw=true"
             },
             {
 				"name": "SDV Heavy Corvette (Line Formation)",
@@ -1935,7 +1935,7 @@
                 ],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/sdv%20heavy%20corvette%20(line%20formation).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/SDV-HeavyCorevetteLine.JPG?raw=true"
 			},
 			{
 				"name": "SDV Heavy Corvette (Oblique Formation)",
@@ -1967,7 +1967,7 @@
                 ],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/sdv%20heavy%20corvette%20(oblique%20formation).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/SDV-HeavyCorevetteOblique.JPG?raw=true"
 			},
             {
                 "name": "SDV Heavy Corvette (Tri-Formation)",
@@ -2000,7 +2000,7 @@
                 ],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/sdv%20heavy%20corvette%20(tri-formation).png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/SDV-HeavyCorevetterTri.JPG?raw=true"
             },
             {
                 "name": "Halberd-Class Destroyers (Axe Formation)",
@@ -2531,7 +2531,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer.png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CPV-HeavyDestroyer.JPG?raw=true",
 				"specialRules": [
 					"Penitents"
 				]
@@ -2566,7 +2566,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer%20(supported).png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CPV-HeavyDestroyerSupported.JPG?raw=true",
 				"specialRules": [
 					"Penitents"
 				]
@@ -2601,7 +2601,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer%20(escorted).png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CPV-HeavyDestroyerEscorted.JPG?raw=true",
                 "specialRules": [
 					"Penitents"
 				]
@@ -2636,7 +2636,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cpv%20heavy%20destroyer%20(defended).png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CPV-HeavyDestroyerDefended.JPG?raw=true",
 				"specialRules": [
 					"Penitents"
 				]
@@ -2671,7 +2671,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser.png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/RCS-ArmouredCruiser.JPG?raw=true"
 			},
 			{
 				"name": "RCS Armored Cruiser (Supported)",
@@ -2703,7 +2703,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(supported).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/RCS-ArmouredCruiserSupported.JPG?raw=true"
 			},
 			{
 				"name": "RCS Armored Cruiser (Escorted)",
@@ -2735,7 +2735,7 @@
                 ],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(escorted).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/RCS-ArmouredCruiserEscorted.JPG?raw=true"
 			},
 			{
 				"name": "RCS Armored Cruiser (Defended)",
@@ -2767,7 +2767,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(defended).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/RCS-ArmouredCruiserDefended.JPG?raw=true"
 			},
 			{
 				"name": "RCS Armored Cruiser (Reinforced)",
@@ -2799,7 +2799,7 @@
                 ],
                 "boardingCraft": 3,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruiser%20(reinforced).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/RCS-ArmouredCruiserReinforced.JPG?raw=true"
 			},
 			{
 				"name": "RCS Armored Cruisers (Paired)",
@@ -2832,7 +2832,7 @@
                 ],
                 "boardingCraft": 5,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/rcs%20armored%20cruisers%20(penitent).png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/RCS-ArmouredCruiserPaired.JPG?raw=true",
 				"specialRules": [
 					"Penitents"
 				]
@@ -2867,7 +2867,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CCS-Battlecruiser.JPG?raw=true"
             },
 			{
 				"name": "CCS Battlecruiser (Supported)",
@@ -2899,7 +2899,7 @@
                 ],
 				"buildRating": 4,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(supported).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CCS-BattlecruiserSupported.JPG?raw=true"
 			},
             {
 				"name": "CCS Battlecruiser (Escorted)",
@@ -2931,7 +2931,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(escorted).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CCS-BattlecruiserEscorted.JPG?raw=true"
 			},
 			{
 				"name": "CCS Battlecruiser (Reinforced)",
@@ -2964,7 +2964,7 @@
                 ],
                 "boardingCraft": 4,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(reinforced).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CCS-BattlecruiserReinforced.JPG?raw=true"
 			},
             {
 				"name": "CCS Battlecruiser (Defended)",
@@ -2996,7 +2996,7 @@
                 ],
                 "boardingCraft": 2,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser%20(defended).png?raw=true"
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CCS-BattlecruiserDefended.JPG?raw=true"
 			},
 			{
 				"name": "CCS Battlecruisers (Paired)",
@@ -3029,7 +3029,7 @@
                 ],
                 "boardingCraft": 4,
                 "boardingSpecialists": [],
-				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruisers%20(paired).png?raw=true",
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/CCS-BattlecruiserPaired.JPG?raw=true",
                 "specialRules": [
 					"Penitents"
 				]
