@@ -29,6 +29,8 @@
         "groups",
         "nonCapitalShips",
         "capitalShips",
+        "massiveShips",
+        "emplacementPlatforms",
         "fighters",
         "boardingSpecialists"
     ],
@@ -87,7 +89,9 @@
                             "maximumChildren": {
                                 "nonCapitalShips": 4,
                                 "capitalShips": 2,
-                                "boardingSpecialists": 0
+                                "massiveShips": 0,
+                                "boardingSpecialists": 0,
+                                "emplacementPlatforms": 0
                             },
                             "rank": 1
                         },
@@ -96,7 +100,9 @@
                             "maximumChildren": {
                                 "nonCapitalShips": 0,
                                 "capitalShips": 0,
-                                "boardingSpecialists": 0
+                                "massiveShips": 0,
+                                "boardingSpecialists": 0,
+                                "emplacementPlatforms": 0
                             },
                             "rank": 2
                         },
@@ -105,27 +111,44 @@
                             "maximumChildren": {
                                 "nonCapitalShips": 0,
                                 "capitalShips": 0,
-                                "boardingSpecialists": 0
+                                "massiveShips": 3,
+                                "boardingSpecialists": 0,
+                                "emplacementPlatforms": 0
                             },
                             "rank": 3
                         },
                         {
-                            "name": "Emplacement Elements",
+                            "name": "Emplacement Battle Groups",
                             "maximumChildren": {
                                 "nonCapitalShips": 0,
                                 "capitalShips": 0,
-                                "boardingSpecialists": 0
+                                "massiveShips": 0,
+                                "boardingSpecialists": 0,
+                                "emplacementPlatforms": 2
                             },
                             "rank": 4
+                        },
+                        {
+                            "name": "Heroic Characters",
+                            "maximumChildren": {
+                                "nonCapitalShips": 0,
+                                "capitalShips": 0,
+                                "massiveShips": 0,
+                                "boardingSpecialists": 1,
+                                "emplacementPlatforms": 0
+                            },
+                            "rank": 5
                         },
                         {
                             "name": "Commander Statistics",
                             "maximumChildren": {
                                 "nonCapitalShips": 0,
                                 "capitalShips": 0,
-                                "boardingSpecialists": 1
+                                "massiveShips": 0,
+                                "boardingSpecialists": 1,
+                                "emplacementPlatforms": 0
                             },
-                            "rank": 5
+                            "rank": 6
                         }
                     ],
                     "children": [
@@ -174,6 +197,43 @@
                             ]
                         },
                         {
+                            "singleKey": "emplacementPlatform",
+                            "dataSource": "emplacementPlatforms",
+                            "propertyName": "emplacementPlatforms",
+                            "label": "Emplacement Platforms",
+                            "type": "list",
+                            "children":[
+                                {
+                                    "propertyName": "hangars",
+                                    "dataSource": "fighters",
+                                    "label": "Interceptors/Bombers",
+                                    "type": "checkbox"
+                                }
+                            ]
+                        },
+                        {
+                            "singleKey": "massiveShip",
+                            "dataSource": "massiveShips",
+                            "propertyName": "massiveShips",
+                            "label": "Massive Ship",
+                            "type": "list",
+                            "children":[
+                                {
+                                    "propertyName": "hangars",
+                                    "dataSource": "fighters",
+                                    "label": "Interceptors/Bombers",
+                                    "type": "checkbox"
+                                },
+                                {
+                                    "singleKey": "boardingSpecialist",
+                                    "dataSource": "boardingSpecialists",
+                                    "propertyName": "boardingSpecialists",
+                                    "label": "Boarding Specialists",
+                                    "type": "checkbox"
+                                }
+                            ]
+                        },
+                        {
                             "singleKey": "boardingSpecialist",
                             "dataSource": "boardingSpecialists",
                             "propertyName": "boardingSpecialists",
@@ -185,6 +245,18 @@
                             "label": "Special Rules",
                             "type": "static",
                             "dataSource": "keywords"
+                        },
+                        {
+                            "propertyName": "heroicCharacterSpecialOrders",
+                            "label": "Special Orders",
+                            "type": "static",
+                            "dataSource": "specialOrders"
+                        },
+                        {
+                            "propertyName": "heroicCharacterUniqueAbilities",
+                            "label": "Unique Abilities",
+                            "type": "static",
+                            "dataSource": "uniqueAbilities"
                         }
                     ]
                 }
@@ -498,11 +570,14 @@
                 "name": "Massive Elements"
             },
             {
-                "name": "Emplacement Elements"
+                "name": "Emplacement Battle Groups"
+            },
+            {
+                "name": "Heroic Characters"
             },
             {
                 "name": "Commander Statistics"
-            }
+            }            
         ],
         "groups": [
             {
@@ -689,8 +764,55 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/michael%20stanforth.jpg?raw=true",
+                "imageUrl": "https://halofleetbattles.com/wp-content/uploads/2023/06/Michael-Stanforth_Page_2-scaled.jpg?raw=true",
                 "imageOrientation": "portrait"
+            },
+            {
+                "name": "Cortana",
+                "points": 80,
+                "factions": [
+                    {
+                        "name": "UNSC Assault Commander",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "UNSC Fleet Commander",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "UNSC Gunnery Commander",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "UNSC Wing Commander",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "Michael Stanforth",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "Lord Hood",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "Preston Cole",
+                        "heroicTier": "Heroic Characters"
+                    }
+                ],
+                "imageUrl": "https://halofleetbattles.com/wp-content/uploads/2023/06/Cortana_Page_2.jpg",
+                "imageOrientation": "portrait",
+                "heroicCharacterSpecialOrders":[
+                    "Ghosts In The Machine",
+                    "The Defensive Option",
+                    "Missile Command"
+                ],
+                "heroicCharacterUniqueAbilities":[
+                    "Cortana is a resourceful and cunning, and her survival is a priority for the UNSC."
+                ],
+                "specialRules":[
+                    "Assigned"
+                ]
             },
             {
                 "name": "Lord Hood Stats",
@@ -702,7 +824,7 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/lord%20hood.jpg?raw=true",
+                "imageUrl": "https://halofleetbattles.com/wp-content/uploads/2023/06/Lord-Hood_Page_2.jpg?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -715,7 +837,7 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/preston%20cole.jpg?raw=true",
+                "imageUrl": "https://halofleetbattles.com/wp-content/uploads/2023/06/Admiral-Cole_Page_2.jpg?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -728,7 +850,7 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/xytan%20jar%20wattinree.jpg?raw=true",
+                "imageUrl": "https://halofleetbattles.com/wp-content/uploads/2023/06/Xytan-_Jar-Wattinree_Page_2.jpg?raw=true",
                 "imageOrientation": "portrait"
             },
             {
@@ -754,8 +876,76 @@
                     }
                 ],
                 "autoAddOnly": true,
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/maccabeus.jpg?raw=true",
+                "imageUrl": "https://halofleetbattles.com/wp-content/uploads/2023/06/Maccabeus_Page_2-scaled.jpg?raw=true",
                 "imageOrientation": "portrait"
+            },
+            {
+                "name": "Minister of Etiology",
+                "points": 80,
+                "factions": [
+                    {
+                        "name": "Covenant Assault Commander",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "Covenant Fleet Commander",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "Covenant Gunnery Commander",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "Covenant Wing Commander",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "Xytan 'Jar Wattinree",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "Rho 'Barutamee",
+                        "heroicTier": "Heroic Characters"
+                    },
+                    {
+                        "name": "Maccabeus",
+                        "heroicTier": "Heroic Characters"
+                    }
+                ],
+                "imageUrl": "https://halofleetbattles.com/wp-content/uploads/2023/06/Minister-of-Etiology__Page_2.jpg?raw=true",
+                "imageOrientation": "portrait",
+                "heroicCharacterSpecialOrders":[
+                    "\"Prepare My Transport\"",
+                    "\"Protect the Minister!\""
+                ],
+                "heroicCharacterUniqueAbilities":[
+                    "Whilst utterly self-possessed and concerned only with politics, the Minister claims a high rank within the Covenant heiracrchy and can bend even Fleet Commanders to his will."
+                ],
+                "specialRules":[
+                    "Assigned"
+                ]
+            },
+            {
+                "name": "Lighter Than Some",
+                "points": 40,
+                "factions": [
+                    {
+                        "name": "Maccabeus",
+                        "heroicTier": "Heroic Characters"
+                    }
+                ],
+                "imageUrl": "https://halofleetbattles.com/wp-content/uploads/2023/06/Lighter-Than-Some_Page_2.jpg?raw=true",
+                "imageOrientation": "portrait",
+                "heroicCharacterSpecialOrders":[
+                    "\"This is Broken. Must Be Fixed\"",
+                    "\"Must Get To Safety\""
+                ],
+                "heroicCharacterUniqueAbilities":[
+                    "The assigned Element for Lighter Than Some does not suffer from Vulnerable Marker restrictions that Maccabeus grants."
+                ],
+                "specialRules":[
+                    "Assigned"
+                ]
             },
             {
                 "name": "Bountiful Harvest Battle Group",
@@ -799,7 +989,19 @@
                 "requiredChildren": [
                     {
                         "name": "DSC Support Ship",
-                        "quantity": 3,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "capitalShips"
+                    },
+                    {
+                        "name": "DSC Support Ship",
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "capitalShips"
+                    },
+                    {
+                        "name": "DSC Support Ship",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
@@ -953,7 +1155,13 @@
                 "requiredChildren": [
                     {
                         "name": "CPV Heavy Destroyer (Defended)",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "capitalShips"
+                    },
+                    {
+                        "name": "CPV Heavy Destroyer (Defended)",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
@@ -1003,7 +1211,19 @@
                 "requiredChildren": [
                     {
                         "name": "SDV Heavy Corvette (Tri-Formation)",
-                        "quantity": 3,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "nonCapitalShips"
+                    },
+                    {
+                        "name": "SDV Heavy Corvette (Tri-Formation)",
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "nonCapitalShips"
+                    },
+                    {
+                        "name": "SDV Heavy Corvette (Tri-Formation)",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "nonCapitalShips"
                     }
@@ -1121,13 +1341,25 @@
                 "requiredChildren": [
                     {
                         "name": "ORS Heavy Cruiser",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "capitalShips"
+                    },
+                    {
+                        "name": "ORS Heavy Cruiser",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "capitalShips"
                     },
                     {
                         "name": "SDV Heavy Corvette (Line Formation)",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "nonCapitalShips"
+                    },
+                    {
+                        "name": "SDV Heavy Corvette (Line Formation)",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "nonCapitalShips"
                     }
@@ -1181,13 +1413,25 @@
                 "requiredChildren": [
                     {
                         "name": "CCS Battlecruiser",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "capitalShips"
+                    },
+                    {
+                        "name": "CCS Battlecruiser",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "capitalShips"
                     },
                     {
                         "name": "SDV Heavy Corvette (Line Formation)",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "nonCapitalShips"
+                    },
+                    {
+                        "name": "SDV Heavy Corvette (Line Formation)",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "nonCapitalShips"
                     }
@@ -1241,13 +1485,25 @@
                 "requiredChildren": [
                     {
                         "name": "SDV Heavy Corvette (Line Formation)",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "nonCapitalShips"
+                    },
+                    {
+                        "name": "SDV Heavy Corvette (Line Formation)",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "nonCapitalShips"
                     },
                     {
                         "name": "SDV Heavy Corvette (Oblique Formation)",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "nonCapitalShips"
+                    },
+                    {
+                        "name": "SDV Heavy Corvette (Oblique Formation)",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "nonCapitalShips"
                     }
@@ -1358,7 +1614,13 @@
                 "requiredChildren": [
                     {
                         "name": "Marathon-Class Heavy Cruiser (Reinforced)",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "capitalShips"
+                    },
+                    {
+                        "name": "Marathon-Class Heavy Cruiser (Reinforced)",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
@@ -1462,7 +1724,13 @@
                 "requiredChildren": [
                     {
                         "name": "Halcyon-Class Light Cruiser (Reinforced)",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "capitalShips"
+                    },
+                    {
+                        "name": "Halcyon-Class Light Cruiser (Reinforced)",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "capitalShips"
                     }
@@ -1580,7 +1848,13 @@
                 "requiredChildren": [
                     {
                         "name": "Marathon-Class Heavy Cruiser (Supported)",
-                        "quantity": 2,
+                        "quantity": 1,
+                        "points": 0,
+                        "elementPropertyName": "capitalShips"
+                    },
+                    {
+                        "name": "Marathon-Class Heavy Cruiser (Supported)",
+                        "quantity": 1,
                         "points": 0,
                         "elementPropertyName": "capitalShips"
                     },
@@ -1749,7 +2023,13 @@
                     {
                         "name": "Epoch-Class Heavy Carrier",
                         "points": 0,
-                        "quantity": 2,
+                        "quantity": 1,
+                        "elementPropertyName": "capitalShips"
+                    },
+                    {
+                        "name": "Epoch-Class Heavy Carrier",
+                        "points": 0,
+                        "quantity": 1,
                         "elementPropertyName": "capitalShips"
                     }
                 ],
@@ -1861,7 +2141,208 @@
                 ],
                 "decreaseModelCount": 6,
                 "specialRules": []
-            }
+            },
+            {
+                "name": "MAC Platform",
+                "points": 160,
+                "factions": [
+                    {
+                        "name": "UNSC Assault Commander",
+                        "heroicTier": "Emplacement Battle Groups"
+                    },
+                    {
+                        "name": "UNSC Fleet Commander",
+                        "heroicTier": "Emplacement Battle Groups"
+                    },
+                    {
+                        "name": "UNSC Gunnery Commander",
+                        "heroicTier": "Emplacement Battle Groups"
+                    },
+                    {
+                        "name": "UNSC Wing Commander",
+                        "heroicTier": "Emplacement Battle Groups"
+                    },
+                    {
+                        "name": "Michael Stanforth",
+                        "heroicTier": "Emplacement Battle Groups"
+                    },
+                    {
+                        "name": "Lord Hood",
+                        "heroicTier": "Emplacement Battle Groups"
+                    },
+                    {
+                        "name": "Preston Cole",
+                        "heroicTier": "Emplacement Battle Groups"
+                    }
+                ],
+                "includes": [
+                    {
+                        "dataSource": "emplacementPlatforms",
+                        "name": "MAC Platform"
+                    }
+                ],
+                "requiredChildren": [
+                    {
+                        "name": "MAC Platform",
+                        "quantity": 1,
+                        "points": 0,
+                        "max": 2,
+                        "elementPropertyName": "emplacementPlatforms"
+                    }
+                ],
+                "decreaseModelCount": 3,
+                "specialRules": [
+					"Vital Defensive Asset"
+                ]
+            },
+             {
+				"name": "Covenant Assault Carrier (CAS)",
+				"points": 750,
+				"factions": [
+					{
+                        "name": "Covenant Assault Commander",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "Covenant Fleet Commander",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "Covenant Gunnery Commander",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "Covenant Wing Commander",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "Xytan 'Jar Wattinree",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "Rho 'Barutamee",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "Maccabeus",
+                        "heroicTier": "Massive Elements"
+                    }
+				],
+				"includes": [
+					{
+						"dataSource": "massiveShips",
+						"name": "CAS-class Covenant Assault Carrier (Fore)"
+					},
+					{
+						"dataSource": "massiveShips",
+						"name": "CAS-class Covenant Assault Carrier (Mid)"
+					},
+					{
+						"dataSource": "massiveShips",
+						"name": "CAS-class Covenant Assault Carrier (Aft)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "CAS-class Covenant Assault Carrier (Fore)",
+						"quantity": 1,
+                        "points": 0,
+						"elementPropertyName": "massiveShips"
+					},
+					{
+						"name": "CAS-class Covenant Assault Carrier (Mid)",
+						"quantity": 1,
+                        "points": 0,
+						"elementPropertyName": "massiveShips"
+					},
+					{
+						"name": "CAS-class Covenant Assault Carrier (Aft)",
+						"quantity": 1,
+                        "points": 0,
+						"elementPropertyName": "massiveShips"
+					}
+				],
+				"decreaseModelCount": 3,
+				"specialRules": [
+					"Cathedral of the Faithful",
+					"Seraph Hosts",
+					"Limited Resources"
+				]
+			},
+			{
+				"name": "Punic-class Supercarrier",
+				"points": 675,
+				"factions": [
+                    {
+                        "name": "UNSC Assault Commander",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "UNSC Fleet Commander",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "UNSC Gunnery Commander",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "UNSC Wing Commander",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "Michael Stanforth",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "Lord Hood",
+                        "heroicTier": "Massive Elements"
+                    },
+                    {
+                        "name": "Preston Cole",
+                        "heroicTier": "Massive Elements"
+                    }
+                ],
+				"includes": [
+					{
+						"dataSource": "massiveShips",
+						"name": "Punic-class Supercarrier (Fore)"
+					},
+					{
+						"dataSource": "massiveShips",
+						"name": "Punic-class Supercarrier (Aft)"
+					},
+					{
+						"dataSource": "massiveShips",
+						"name": "Punic-class Supercarrier (Mid)"
+					}
+				],
+				"requiredChildren": [
+					{
+						"name": "Punic-class Supercarrier (Fore)",
+						"quantity": 1,
+                        "points": 0,
+						"elementPropertyName": "massiveShips"
+					},
+					{
+						"name": "Punic-class Supercarrier (Aft)",
+						"quantity": 1,
+                        "points": 0,
+						"elementPropertyName": "massiveShips"
+					},
+					{
+						"name": "Punic-class Supercarrier (Mid)",
+						"quantity": 1,
+                        "points": 0,
+						"elementPropertyName": "massiveShips"
+					}
+				],
+				"decreaseModelCount": 3,
+				"specialRules": [
+					"Frigate Resupply",
+					"Automated Repair Systems",
+					"Limited Resources"
+				]
+			}
         ],
         "nonCapitalShips": [
             {
@@ -1927,7 +2408,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 1,
 						"points": 0
@@ -1959,7 +2440,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 1,
 						"points": 0
@@ -1992,7 +2473,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 1,
 						"points": 0
@@ -2019,71 +2500,6 @@
                 "hangars": [],
                 "boardingCraft": 1,
                 "boardingSpecialists": [],
-                "availableIn": [
-                    {
-						"all": [
-							{
-								"in": "UNSC Fleet Commander"
-							},
-							{
-								"with": "Standard Battle Group"
-							}
-						]
-					}
-                ],
-                "unavailableIn": [
-					[
-						"UNSC Assault Commander Stats"
-					],
-                    [
-						"UNSC Fleet Commander Stats"
-					],
-                    [
-						"UNSC Gunnery Commander Stats"
-					],
-                    [
-						"UNSC Wing Commander Stats"
-					],
-                    [
-						"Lord Hood Stats"
-					],
-                    [
-						"Preston Cole Stats"
-					],
-                    [
-						"Michael Stanforth Stats"
-					],
-                    [
-						"Barrage Battle Group"
-					],
-                    [
-						"Cerberus Battle Group"
-					],
-                    [
-						"Chimera Spirit Battle Group"
-					],
-                    [
-						"Cyclops Pack Battle Group"
-					],
-                    [
-						"Gorgon Battle Group"
-					],
-                    [
-						"Guardian Spirit Battle Group"
-					],
-                    [
-						"Harpy Pack Battle Group"
-					],
-                    [
-						"Orthus Battle Group"
-					],
-                    [
-						"Shield Wall Battle Group"
-					],
-                    [
-						"Wolf Pack Battle Group"
-					]                  
-				],
                 "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/HalberdDestroyers.jpg?raw=true"
             },
             {
@@ -2103,72 +2519,6 @@
                 "hangars": [],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-                "availableIn": [
-                    {
-						"all": [
-							{
-								"in": "UNSC Fleet Commander"
-							},
-							{
-								"with": "Standard Battle Group"
-							}
-						]
-					}
-                ],
-                "unavailableIn": [
-					[
-						"UNSC Assault Commander Stats"
-					],
-                    [
-						"UNSC Fleet Commander Stats"
-					],
-                    [
-						"UNSC Gunnery Commander Stats"
-					],
-                    [
-						"UNSC Wing Commander Stats"
-					],
-                    [
-						"Lord Hood Stats"
-					],
-                    [
-						"Preston Cole Stats"
-					],
-                    [
-						"Michael Stanforth Stats"
-					],
-                    [
-						"Barrage Battle Group"
-					],
-                    [
-						"Cerberus Battle Group"
-					],
-                    [
-						"Chimera Spirit Battle Group"
-					],
-                    [
-						"Cyclops Pack Battle Group"
-					],
-                    [
-						"Gorgon Battle Group"
-					],
-                    [
-						"Guardian Spirit Battle Group"
-					],
-                    [
-						"Harpy Pack Battle Group"
-					],
-                    [
-						"Orthus Battle Group"
-					],
-                    [
-						"Shield Wall Battle Group"
-					],
-                    [
-						"Wolf Pack Battle Group"
-					]
-                    
-				],
                 "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ParisFrigatesArrowhead.jpg?raw=true"
             },
             {
@@ -2189,69 +2539,6 @@
                 "hangars": [],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-                "availableIn": [
-                    {
-						"all": [
-							{
-								"in": "UNSC Fleet Commander"
-							},
-							{
-								"with": "Shield Wall Battle Group"
-							}
-						]
-					}
-                ],
-                "unavailableIn": [
-					[
-						"UNSC Assault Commander Stats"
-					],
-                    [
-						"UNSC Fleet Commander Stats"
-					],
-                    [
-						"UNSC Gunnery Commander Stats"
-					],
-                    [
-						"UNSC Wing Commander Stats"
-					],
-                    [
-						"Lord Hood Stats"
-					],
-                    [
-						"Preston Cole Stats"
-					],
-                    [
-						"Michael Stanforth Stats"
-					],
-                    [
-						"Barrage Battle Group"
-					],
-                    [
-						"Cerberus Battle Group"
-					],
-                    [
-						"Chimera Spirit Battle Group"
-					],
-                    [
-						"Cyclops Pack Battle Group"
-					],
-                    [
-						"Gorgon Battle Group"
-					],
-                    [
-						"Guardian Spirit Battle Group"
-					],
-                    [
-						"Harpy Pack Battle Group"
-					],
-                    [
-						"Orthus Battle Group"
-					],
-                    [
-						"Wolf Pack Battle Group"
-					]
-                    
-				],
                 "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ParisFrigatesShield.jpg?raw=true"
             },
             {
@@ -2271,72 +2558,6 @@
                 "hangars": [],
                 "boardingCraft": 0,
                 "boardingSpecialists": [],
-                "availableIn": [
-                    {
-						"all": [
-							{
-								"in": "UNSC Fleet Commander"
-							},
-							{
-								"with": "Standard Battle Group"
-							}
-						]
-					}
-                ],
-                "unavailableIn": [
-					[
-						"UNSC Assault Commander Stats"
-					],
-                    [
-						"UNSC Fleet Commander Stats"
-					],
-                    [
-						"UNSC Gunnery Commander Stats"
-					],
-                    [
-						"UNSC Wing Commander Stats"
-					],
-                    [
-						"Lord Hood Stats"
-					],
-                    [
-						"Preston Cole Stats"
-					],
-                    [
-						"Michael Stanforth Stats"
-					],
-                    [
-						"Barrage Battle Group"
-					],
-                    [
-						"Cerberus Battle Group"
-					],
-                    [
-						"Chimera Spirit Battle Group"
-					],
-                    [
-						"Cyclops Pack Battle Group"
-					],
-                    [
-						"Gorgon Battle Group"
-					],
-                    [
-						"Guardian Spirit Battle Group"
-					],
-                    [
-						"Harpy Pack Battle Group"
-					],
-                    [
-						"Orthus Battle Group"
-					],
-                    [
-						"Shield Wall Battle Group"
-					],
-                    [
-						"Wolf Pack Battle Group"
-					]
-                    
-				],
                 "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/ParisFrigatesTrident.jpg?raw=true"
             }
         ],
@@ -2363,7 +2584,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 3,
 						"points": 0
@@ -2395,7 +2616,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 4,
 						"points": 0
@@ -2427,7 +2648,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 3,
 						"points": 0
@@ -2459,7 +2680,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 5,
 						"points": 0
@@ -2491,7 +2712,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 1,
 						"points": 0
@@ -2523,7 +2744,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 2,
 						"points": 0
@@ -2558,7 +2779,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 3,
 						"points": 0
@@ -2593,7 +2814,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 2,
 						"points": 0
@@ -2628,7 +2849,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 1,
 						"points": 0
@@ -2663,7 +2884,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 2,
 						"points": 0
@@ -2695,7 +2916,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 3,
 						"points": 0
@@ -2727,7 +2948,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 2,
 						"points": 0
@@ -2759,7 +2980,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 1,
 						"points": 0
@@ -2791,7 +3012,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 3,
 						"points": 0
@@ -2824,7 +3045,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 4,
 						"points": 0
@@ -2859,7 +3080,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 2,
 						"points": 0
@@ -2881,7 +3102,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 3,
 						"points": 0
@@ -2923,7 +3144,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 2,
 						"points": 0
@@ -2956,7 +3177,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 5,
 						"points": 0
@@ -2988,7 +3209,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 2,
 						"points": 0
@@ -3021,7 +3242,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 4,
 						"points": 0
@@ -3056,7 +3277,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 2,
 						"points": 0
@@ -3091,7 +3312,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 2,
 						"points": 0
@@ -3172,7 +3393,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 5,
 						"points": 0
@@ -3204,7 +3425,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 6,
 						"points": 0
@@ -3242,7 +3463,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 8,
 						"points": 0
@@ -3321,7 +3542,7 @@
 						"points": 0
 					},
                     {
-						"name": "Terrasque Bombers",
+						"name": "Tarasque Bombers",
 						"increment": true,
                         "max": 9,
 						"points": 0
@@ -3722,11 +3943,9 @@
                 "boardingCraft": 2,
                 "boardingSpecialists": [
                     {
-						"name": "ODST Strike Teams (1st Slot)",
-						"points": 5
-					},
-                    {
-						"name": "ODST Strike Teams (2nd Slot)",
+						"name": "ODST Strike Teams",
+                        "increment": true,
+                        "max": 2,
 						"points": 5
 					}
                 ],
@@ -3767,15 +3986,9 @@
                 "boardingCraft": 3,
                 "boardingSpecialists": [
                     {
-						"name": "ODST Strike Teams (1st Slot)",
-						"points": 5
-					},
-                    {
-						"name": "ODST Strike Teams (2nd Slot)",
-						"points": 5
-					},
-                    {
-						"name": "ODST Strike Teams (3rd Slot)",
+						"name": "ODST Strike Teams",
+                        "increment": true,
+                        "max": 3,
 						"points": 5
 					}
                 ],
@@ -4099,6 +4312,16 @@
 						"increment": true,
                         "max": 6,
 						"points": 0
+					},
+                    {
+						"name": "Sabre Interceptors",
+						"increment": true,
+                        "max": 6,
+                        "unlockedBy": "Orthus Battle Group",
+                        "availableIn": [
+							"Orthus Battle Group"
+						],
+						"points": 0
 					}
                 ],
                 "boardingCraft": 3,
@@ -4241,6 +4464,236 @@
                 ]
 			}
         ],
+        "emplacementPlatforms": [
+            {
+				"name": "MAC Platform",
+				"points": 160,
+				"factions": [
+                    "UNSC Assault Commander",
+                    "UNSC Fleet Commander",
+                    "UNSC Gunnery Commander",
+                    "UNSC Wing Commander",
+                    "Michael Stanforth",
+                    "Lord Hood",
+                    "Preston Cole"
+                ],
+				"buildRating": 3,
+				"hangarCapacity": 4,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 4,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 2,
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/MacPlatform.jpg?raw=true",
+                "specialRules": [
+					"Fighter Cover"
+				]
+			}
+        ],
+        "massiveShips":[
+        {
+				"name": "CAS-class Covenant Assault Carrier (Fore)",
+				"autoAddOnly": true,
+				"points": 750,
+				"factions": [
+                    "Covenant Assault Commander",
+                    "Covenant Fleet Commander",
+                    "Covenant Gunnery Commander",
+                    "Covenant Wing Commander",
+                    "Xytan 'Jar Wattinree",
+                    "Rho 'Barutamee",
+                    "Maccabeus"
+                ],
+				"buildRating": 5,
+                "hangarCapacity": 3,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					},
+                    {
+						"name": "Tarasque Bombers",
+						"increment": true,
+                        "max": 3,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cas-class%20covenant%20assault%20carrier%20(fore).png?raw=true"
+			},
+			{
+				"name": "CAS-class Covenant Assault Carrier (Mid)",
+				"autoAddOnly": true,
+				"points": 0,
+				"factions": [
+                    "Covenant Assault Commander",
+                    "Covenant Fleet Commander",
+                    "Covenant Gunnery Commander",
+                    "Covenant Wing Commander",
+                    "Xytan 'Jar Wattinree",
+                    "Rho 'Barutamee",
+                    "Maccabeus"
+                ],
+				"buildRating": 6,
+                "hangarCapacity": 10,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 10,
+						"points": 0
+					},
+                    {
+						"name": "Tarasque Bombers",
+						"increment": true,
+                        "max": 10,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 5,
+                "boardingSpecialists": [],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cas-class%20covenant%20assault%20carrier%20(mid).png?raw=true"
+			},
+			{
+				"name": "CAS-class Covenant Assault Carrier (Aft)",
+				"autoAddOnly": true,
+				"points": 0,
+				"factions": [
+                    "Covenant Assault Commander",
+                    "Covenant Fleet Commander",
+                    "Covenant Gunnery Commander",
+                    "Covenant Wing Commander",
+                    "Xytan 'Jar Wattinree",
+                    "Rho 'Barutamee",
+                    "Maccabeus"
+                ],
+				"buildRating": 5,
+                "hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Seraph Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Tarasque Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 2,
+                "boardingSpecialists": [],
+				"imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/cas-class%20covenant%20assault%20carrier%20(aft).png?raw=true"
+			},
+            {
+				"name": "Punic-class Supercarrier (Fore)",
+				"autoAddOnly": true,
+				"points": 675,
+				"factions": [
+                    "UNSC Assault Commander",
+                    "UNSC Fleet Commander",
+                    "UNSC Gunnery Commander",
+                    "UNSC Wing Commander",
+                    "Michael Stanforth",
+                    "Lord Hood",
+                    "Preston Cole"
+                ],
+				"buildRating": 5,
+				"hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/PunicSupercarrierFore.jpg?raw=true"
+			},
+			{
+				"name": "Punic-class Supercarrier (Mid)",
+				"autoAddOnly": true,
+				"points": 0,
+                "factions": [
+                    "UNSC Assault Commander",
+                    "UNSC Fleet Commander",
+                    "UNSC Gunnery Commander",
+                    "UNSC Wing Commander",
+                    "Michael Stanforth",
+                    "Lord Hood",
+                    "Preston Cole"
+                ],
+				"buildRating": 6,
+				"hangarCapacity": 10,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 10,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 10,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 5,
+                "boardingSpecialists": [],
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/PunicSupercarrierMid.jpg?raw=true"
+			},
+            {
+				"name": "Punic-class Supercarrier (Aft)",
+				"autoAddOnly": true,
+				"points": 0,
+				"factions": [
+                    "UNSC Assault Commander",
+                    "UNSC Fleet Commander",
+                    "UNSC Gunnery Commander",
+                    "UNSC Wing Commander",
+                    "Michael Stanforth",
+                    "Lord Hood",
+                    "Preston Cole"
+                ],
+				"buildRating": 5,
+				"hangarCapacity": 2,
+                "hangars": [
+                    {
+						"name": "Broadsword Interceptors",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					},
+                    {
+						"name": "Longsword Bombers",
+						"increment": true,
+                        "max": 2,
+						"points": 0
+					}
+                ],
+                "boardingCraft": 3,
+                "boardingSpecialists": [],
+				"imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/ShipCards/PunicSupercarrierAft.jpg?raw=true"
+			}
+        ],
         "fighters": [
             {
                 "name": "Seraph Interceptors",
@@ -4254,10 +4707,11 @@
                     "Xytan 'Jar Wattinree",
                     "Rho 'Barutamee",
                     "Maccabeus"
-                ]
+                ],
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/FighterCards/SeraphInterceptors.JPG?raw=true"
             },
             {
-                "name": "Terrasque Bombers",
+                "name": "Tarasque Bombers",
                 "points": 0,
                 "increment": true,
                 "factions": [
@@ -4268,7 +4722,23 @@
                     "Xytan 'Jar Wattinree",
                     "Rho 'Barutamee",
                     "Maccabeus"
-                ]
+                ],
+                "imageURL": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/FighterCards/TarasqueBombers.JPG?raw=true"
+            },
+            {
+                "name": "Type-27 Exoatmospheric Multirole Fighter",
+                "points": 0,
+                "increment": true,
+                "factions": [
+                    "Covenant Assault Commander",
+                    "Covenant Fleet Commander",
+                    "Covenant Gunnery Commander",
+                    "Covenant Wing Commander",
+                    "Xytan 'Jar Wattinree",
+                    "Rho 'Barutamee",
+                    "Maccabeus"
+                ],
+                "imageURL": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/FighterCards/BansheeInterceptors.JPG?raw=true"
             },
             {
                 "name": "Broadsword Interceptors",
@@ -4282,7 +4752,8 @@
                     "Michael Stanforth",
                     "Lord Hood",
                     "Preston Cole"
-                ]
+                ],
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/FighterCards/BroadswordInterceptors.JPG?raw=true"
             },
             {
                 "name": "Longsword Bombers",
@@ -4296,7 +4767,23 @@
                     "Michael Stanforth",
                     "Lord Hood",
                     "Preston Cole"
-                ]
+                ],
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/FighterCards/LongswordBombers.JPG?raw=true"
+            },
+            {
+                "name": "Sabre Interceptors",
+                "points": 0,
+                "increment": true,
+                "factions": [
+                    "UNSC Assault Commander",
+                    "UNSC Fleet Commander",
+                    "UNSC Gunnery Commander",
+                    "UNSC Wing Commander",
+                    "Michael Stanforth",
+                    "Lord Hood",
+                    "Preston Cole"
+                ],
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/FighterCards/SabreInterceptors.JPG?raw=true"
             }
         ],
         "boardingSpecialists": [
@@ -4312,7 +4799,7 @@
                     "Rho 'Barutamee",
                     "Maccabeus"
                 ],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/BoardingCraft/BruteHuntingParties.JPG?raw=true"
             },
             {
                 "name": "Elite Zealots",
@@ -4326,7 +4813,7 @@
                     "Rho 'Barutamee",
                     "Maccabeus"
                 ],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/BoardingCraft/EliteZealots.JPG?raw=true"
             },
             {
                 "name": "Hunter Assault Cadres",
@@ -4340,7 +4827,7 @@
                     "Rho 'Barutamee",
                     "Maccabeus"
                 ],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/Covenant/BoardingCraft/HunterAssaultCadres.JPG?raw=true"
             },
             {
                 "name": "Spartan-III Team",
@@ -4354,7 +4841,7 @@
                     "Lord Hood",
                     "Preston Cole"
                 ],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/BoardingCraft/Spartan-IIITeam.JPG?raw=true"
             },
             {
                 "name": "ODST Strike Teams",
@@ -4368,13 +4855,17 @@
                     "Lord Hood",
                     "Preston Cole"
                 ],
-                "imageUrl": "https://github.com/andrewinge/halofleet.github.io/blob/main/images/ccs%20battlecruiser.png?raw=true"
+                "imageUrl": "https://github.com/mcauwels/HaloFleetBattles/blob/main/UNSC/BoardingCraft/ODSTStrikeTeams.JPG?raw=true"
             }
         ],
         "keywords": [
             {
                 "name": "Battle Groups",
                 "definition": "Standard Battle Groups must adhere to three rules:\n1. They MUST contain at least 1 Capital Element.\n2. They MUST contain at least 1 Non-Capital Element.\n3. The combined Build Rating (BR) MUST NOT exceed BR 6 (see the Fleet Building chapter on page 22 of the Halo: Fleet Battles core rulebook)."
+            },
+            {
+                "name": "Assigned",
+                "definition": "This Heroic Character must be assigned to a specific Formation Base within the Fleet at the start of the battle."
             },
             {
 				"name": "Plasma Beam Overload",
@@ -4545,6 +5036,18 @@
                 "definition": "When calculating the amount of VPs awarded based on the BR of a friendly Element's destruction, reduce the VPs awarded by 1 (to a minimum of 1). Note that Elements with the High Value Target Loadout grant VPs as normal."
             },
             {
+                "name": "Ghosts In The Machine",
+                "definition": "Spend 1 Attack, 1 Defense, and 1 Command Order die. Cortana can hack into the command and control network of the enemy Battle Group. For this Turn only, reduce all Attack Firepoer Ratings of an enemy Battle Group by -2. This Order must be issued during the Execute Orders Step of the Orders Phase."
+            },
+            {
+                "name": "The Defensive Option",
+                "definition": "Spend 1 Defense Order die. Increase the Firepower Rating of a Defensive Roll made by a Capital Ship by +1 this Turn. This Order must be issued after a Capital Formation has been targeted by an enemy Attack."
+            },
+            {
+                "name": "Missile Command",
+                "definition": "Spend 1 Attack Order die. Cortana takes control of all Missile Targeting in a Battle Group, and removes the stipulation for any Missile Barrage to target the closest enemy when firing from their Fore Arc. This Order must be issued prior to an emey target being nominated for an attack by Missile Weapons."
+            },
+            {
                 "name": "\"Perfect Time To Strike\"",
                 "definition": "Spend 3 Defense Order dice. The Covenant Fleet automatically gains the Initiative this Turn. This order may be issued during the Executive Order Step of the Order Dice Phase."
             },
@@ -4567,6 +5070,22 @@
             {
                 "name": "\"Jiralhanae Frenzy\"",
                 "definition": "Spend 1 Attack and 1 Command Order die. Increase the Security Detail rating of ALL Brutes in the fleet by +1 for the remainder of the turn. This order must be issued during the Execute Orders Step of the Boarding Resolution Phase."
+            },
+            {
+                "name": "\"Prepare My Transport\"",
+                "definition": "Spend 2 Defense Order dice. The Minister of Etiology is never without an escape plan. Should the Element containing the Minister be Destroyed, roll a Halo Dice - on the roll of a result other than a Skull, the Minister may be placed on a nearby friendly vessel within 12 inches. Should the Minister roll a Skull when trying to escape, or have no friendly Formation base within 12 inches however, the Minister is removed from the game and the enemy Fleet gains an additional +4 VPs."
+            },
+            {
+                "name": "\"Protect the Minister!\"",
+                "definition": "Spend 2 Attack Order dice. The Minister may force an enemy Firing Solution targeting his own Formation Base to re-target a different mamber of his Battle Group - even if a Loadout would require his Formation Base to be the nominated base (Missile Barrage, for example). This Order may be issued after the Formation containing the Minister is declared the target of a Firing Solution."
+            },
+            {
+                "name": "\"This is Broken. Must Be Fixed\"",
+                "definition": "Spend 1 Defense Order die. Remove a single Damage Marker from any Element in the Fleet. This Order must be issued at the beginning of the targeted Element's activation."
+            },
+            {
+                "name": "\"Must Get To Safety\"",
+                "definition": "Spend 1 Attack Order die. Maccabeus commands the Huragok to get off the damaged Element at once! Reassign Lighter Than Some to another Element within 12 inches of the currently assigned Element, and roll a Halo Die - on a roll of a Skull, the Huragok was distracted with repairs and failed to comply. This order must be issued during the Element's activation."
             }
         ],
         "uniqueAbilities": [
@@ -4607,6 +5126,10 @@
                 "definition": "During the Deployment Step, place a Countdown Token on Admiral Cole's Command Card, then CHOOSE ONE of the following: \n1.Before deploying any Battle Groups, select ONE Battle Group to be held in Reserves, regardless of whether the scenario calls for it or not. During any of the Reserves Arrives Step, remove the Cooldown Token on Admiral Cole's Command Card to automatically bring in said Battle Group, deploying it ANYWHERE on the board. The Battle Group may then continue its activation, as normal, though no Boarding Craft may be launched.\n2. Once per game, instead of activating a Battle Group normally, remove the Cooldown Token from Admiral Cole's Command Card to redeploy One unactivated Battle Group ANYWHERE on the battlefield by executign a Slipspace Jump. The selected Battle Group needs to be in coherency and can face any direction. The Battle Group may then continue its activation, as normal, though no Boarding Craft may be launched."
             },
             {
+                "name": "Cortana is a resourceful and cunning, and her survival is a priority for the UNSC.",
+                "definition": "Should the Element containing Cortana be Destroyed, roll a Halo Dice - on a roll of any result other than a Skull, Cortana may be placed on a nearby friendly vessel within 12 inches. Should Cortana roll a Skull when trying to escape, or have no friendly Formation Base within 12 inches, Cortana is removed from the game and the Enemy Fleet gains an additional +4 VPs."
+            },
+            {
                 "name": "A gifted military opportunist, Xytan 'Jar Wattniree is capable of taking advantage of the slightest flaw in an opponent's plan.",
                 "definition": "During the Execute Orders Step of the Orders Phase he can force the opponent to re-roll a single Order Dice each turn, but the second result MUST be accepted."
             },
@@ -4625,7 +5148,16 @@
             {
                 "name": "Fleet Restrictions",
                 "definition": "Vulnerable Markers are only repaired by a result of a Critical Hit on the Halo die. And that result only removes a SINGLE token. Additionally, a result of a Skull instead adds one additional Vulnerable Marker.\nNo Large or Massive Elements may be included in a fleet led by Maccabeus."
+            },
+            {
+                "name":  "Whilst utterly self-possessed and concerned only with politics, the Minister claims a high rank within the Covenant heiracrchy and can bend even Fleet Commanders to his will.",
+                "definition": "After any Initial Order Dice have been rolled during the Order Dice Phase, the Minister may change a SINGLE friendly Covenant Order Dice to be any result."
+            },
+            {
+                "name":  "The assigned Element for Lighter Than Some does not suffer from Vulnerable Marker restrictions that Maccabeus grants.",
+                "definition": "The assigned Element may repair Vulnerable Markers as normal."
             }
+            
         ]
     }
 }
