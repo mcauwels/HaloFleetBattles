@@ -5011,7 +5011,7 @@
             },
             {
                 "name": "\"Form Up!\"",
-                "definition": "Spend 1 Command Order die. The Fleet Commander may order the re-building of a Battle Group upt to a maximum BR of 6. See the Ad-hoc Battle Groups rules in the rulebook. This Order must be executed during the Execute Orders Step of the Order Dice Phase."
+                "definition": "Spend 1 Command Order die. The Commander may order the re-building of a Battle Group upt to a maximum BR of 6. See the Ad-hoc Battle Groups rules in the rulebook. This Order must be executed during the Execute Orders Step of the Order Dice Phase."
             }
         ],
         "specialOrders": [
@@ -5091,11 +5091,11 @@
         "uniqueAbilities": [
             {
                 "name": "\"Brilliant Strategy!\"",
-                "definition": "When spending an Order die, roll one Halo die. On a 1/Success result, keep the Order die. On a 2/Critical Success, you may change the face of that Order die to any result and keep it. On a Miss or Skull, the Order is still executed but the Order die is discarded as normal."
+                "definition": "When spending an Order die, roll one Halo die. On a 1/Success result, keep the Order die. On a 2/Critical Success, the Fleet Commander may change the face of that Order die to any result and keep it."
             },
             {
                 "name": "\"Fire at Will!\"",
-                "definition": "When executing the Increase Firepower Order, you may choose to increase the Primary, instead of the Secondary, Weaponry Attack by +2."
+                "definition": "When executing the Increase Firepower Order, the Gunnery Commander may choose to increase the Primary, instead of the Secondary, Weaponry Attack by +2."
             },
             {
                 "name": "\"Keep it Frosty!\"",
@@ -5103,7 +5103,7 @@
             },
             {
                 "name": "\"Time to Dance!\"",
-                "definition": "When resolving either the Attacker or Defender Boarding Victory table, roll 2 dice instead of 1. You may choose which result to take."
+                "definition": "When rolling on either the Attacker or Defender Boarding Victory table, roll 2 dice instead of 1. The Assault Commander may choose which result to take."
             },
             {
                 "name": "The UNSC Assault Commander has acess to specialist boarding troops for purchase in their fleet.",
